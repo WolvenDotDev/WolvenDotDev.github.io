@@ -1,0 +1,6 @@
+:root {
+	/* Place variables here */
+  --val--black-1: 2, 0, 1;
+
+  --black-1: rgb(val(var(--val--black-1)))
+}
