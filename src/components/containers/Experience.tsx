@@ -16,7 +16,7 @@ const Experience: React.FunctionComponent<ExpProps> = ({ experience }) => {
           {title} · {company}
         </h3>
         <p>{description}</p>
-        <ul>
+        <ul className="text-neutral-1">
           {jobdesc.map((job, idx) => (
             <li key={`${id}-job-${idx}}`}>{job}</li>
           ))}
