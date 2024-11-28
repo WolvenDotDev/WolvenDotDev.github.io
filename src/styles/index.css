@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  background-color: var(--navy-1);
+}
+  
 
 #root {
   font-family: Inter;
@@ -10,7 +17,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #1b1b1b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,7 +28,33 @@
   place-items: center;
 
   width: 100vw;
-  height: 100vh;
+}
+
+.lockup {
+  max-width: 100ch;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Roboto Mono";
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p li{
+  color: var(--neutral-1);
+  text-align: justify;
+}
+
+p span {
+  color: var(--light-1)
 }
 
 a {
@@ -40,11 +72,6 @@ body {
   place-items: center;
   width: 100vw;
   height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {

@@ -1,6 +1,15 @@
 :root {
 	/* Place variables here */
   --val--black-1: 2, 0, 1;
-
-  --black-1: rgb(val(var(--val--black-1)))
+  --val--light-1: 225, 235, 255;
+  --val--light-2: 186, 214, 255;
+  /* --val--navy-1: 13, 23, 46; */
+  --val--navy-1: 22, 26, 36;
+  --val--neutral-1: 189, 189, 189;
+  
+  --black-1: rgb(var(--val--black-1));
+  --light-1: rgb(var(--val--light-1));
+  --light-2: rgb(var(--val--light-2));
+  --navy-1: rgb(var(--val--navy-1));
+  --neutral-1: rgb(var(--val--neutral-1));
 }
