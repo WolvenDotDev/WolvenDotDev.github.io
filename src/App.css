@@ -1,10 +1,53 @@
 main {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  /* height:100vh; */
   align-items: center;
-  /* justify-content: center;   */
+  
+  max-width: 100ch;
+  margin: 0 auto;
+  padding: 0 1rem;
   scroll-behavior: smooth;
 }
 
+section { 
+  opacity: 1;
+}
+
+* {
+  transition: opacity 300ms ease-in;
+}
+
+#About {
+  margin: 10rem 0;
+}
+
+#ExperienceTitle {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: top 300ms ease-out;
+  margin-left: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: solid 2px var(--light-1);
+}
+
+#Experience {
+  position: relative;
+}
+
+#Experience .exp-card {
+  transition: all 200ms ease-in;
+}
+
+#Experience:hover #ExperienceTitle {
+  top: -4.5rem;
+}
+
+#Experience:hover .exp-card {
+  opacity: 0.65;
+}
+
+#Experience .exp-card:hover {
+  opacity: 1;
+}

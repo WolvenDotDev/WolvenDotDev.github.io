@@ -9,10 +9,13 @@ module.exports = {
             colors: {
                 'black-1': '#020001',
                 'white-1': '#FAFAFA',
-                'light-1': '#E1EDFF',
-                'light-2': '#BAD6FF',
+                'light-1': '#C2E0F9',
+                'light-2': '#97CDFE',
+                'navy-bg': '#161A24',
                 'navy-1': '#0D172E',
-                'neutral-1': '#BDBDBD',
+                'navy-2': '#102762',
+                'neutral-1': '#B4B4B4',
+                'accent-1': '#FF9B71',
             },
             screens: {
                 'xs': '320px',
