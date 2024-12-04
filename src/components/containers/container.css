@@ -7,5 +7,5 @@
 .jobdesc-list li::marker {
   content: "\f0da"; /* FontAwesome Unicode */
   font-family: FontAwesome;
-  color: var(--light-1)
+  color: var(--accent-1)
 }

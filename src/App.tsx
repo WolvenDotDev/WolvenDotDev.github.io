@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import type { DExperience } from '@/types/experience';
+import type { DArsenal } from '@/types/arsenal';
 import Experience from './components/containers/Experience';
+import ArsenalList from './components/containers/ArsenalList';
 
 const expList: DExperience[] = [
   {
@@ -10,7 +12,7 @@ const expList: DExperience[] = [
     jobdesc: [
       'Develop UI components and backend services for a resource management website of an Indonesian oil and gas company using C# ASP.NET MVC framework',
       'Maintain code boilerplate for a Next.JS repository to be used in future company client projects',
-      'Develop back end services for a thesis management & student study plan website of a world‑class private university in Jakarta, using C# .NET Core framework and Azure cloud service',
+      'Develop back end services for a thesis management & student study plan website of a world-class private university in Jakarta, using C# .NET Core framework and Azure cloud service',
     ],
     date: 'Feb 2023 - Present',
     skills: ['JavaScript', 'C#', '.NET', 'Azure'],
@@ -50,11 +52,25 @@ const expList: DExperience[] = [
   },
 ];
 
+const arsenalList: DArsenal[] = [
+  { title: 'React.JS', file: 'react.svg', grade: 1 },
+  { title: 'Next.JS', file: 'next.svg', grade: 1 },
+  { title: 'C#', file: 'c-sharp.svg', grade: 1 },
+  { title: 'Figma', file: 'figma.svg', grade: 1 },
+  { title: 'GoLang', file: 'golang.svg', grade: 2 },
+  { title: 'Tailwind', file: 'tailwind.svg', grade: 1 },
+  { title: 'JavaScript', file: 'javascript.svg', grade: 2 },
+  { title: 'MySQL', file: 'mysql.svg', grade: 2 },
+  { title: 'Firebase', file: 'firebase.svg', grade: 2 },
+  { title: 'Java', file: 'java.svg', grade: 2 },
+  { title: 'Oracle', file: 'oracle .svg', grade: 2 },
+];
+
 const App: React.FC = () => {
   return (
     <main className="App">
-      <section id="About" className="px-5">
-        <h6 className="mb-1 text-neutral-1">Hi, my name is</h6>
+      <section id="About" className="mt-40 mb-32 px-5">
+        <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
         <h1 className="mb-4">
           <span id="Gregorius">Gregorius</span> Jovan Kresnadi
         </h1>
@@ -74,7 +90,9 @@ const App: React.FC = () => {
         <p>
           I also do occasional{' '}
           <span>
-            <a href="#Projects">side projects</a>
+            <a className="section-title" href="#Projects">
+              side projects
+            </a>
           </span>{' '}
           to keep my tech arsenal fresh. Mainly I choose Next.JS, Tailwind, and GoLang as my preferred tools of the
           trade, but I try to diversify to not look everything as a nail.
@@ -90,24 +108,23 @@ const App: React.FC = () => {
           , on foot, in the gym, or on my gaming rig.
         </p>
       </section>
-      <section id="Experience" className="flex flex-col gap-4">
-        <h2 className="section-header-pop-up" id="ExperienceTitle">
-          Experience
-        </h2>
+      <section id="Experience" className="mt-16 mb-24 relative flex flex-col">
+        <h2 className="section-header-pop-up">Experience</h2>
         <div className="flex flex-col gap-4 bg-navy-bg z-10">
           {expList.map((exp, idx) => (
             <Experience experience={exp} key={`Exp-${idx}`} />
           ))}
         </div>
       </section>
-      <section id="Skills">
-        <h2>Tech Arsenal</h2>
+      <section id="Skills" className="mt-16 mb-24 relative flex flex-col w-full">
+        <h2 className="section-header-pop-up">Tech Arsenal</h2>
+        <ArsenalList arsenalList={arsenalList} />
       </section>
-      <section id="Projects">
-        <h2>Projects</h2>
+      <section id="Projects" className="mt-16 mb-24 relative">
+        <h2 className="section-header-pop-up">Projects</h2>
       </section>
-      <section id="Contact">
-        <h2>Get In Touch</h2>
+      <section id="Contact" className="mt-16 mb-24 relative">
+        <h2 className="section-header-pop-up">Get In Touch</h2>
       </section>
     </main>
   );

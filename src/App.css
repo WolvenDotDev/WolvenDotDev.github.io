@@ -17,31 +17,24 @@ section {
   transition: opacity 300ms ease-in;
 }
 
-#About {
-  margin: 10rem 0;
-}
-
-#ExperienceTitle {
+.section-header-pop-up {
   z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
-  transition: top 300ms ease-out;
+  transition: top 500ms cubic-bezier(.67,-0.02,0,1);
   margin-left: 1rem;
   padding-bottom: 0.3rem;
-  border-bottom: solid 2px var(--light-1);
+  border-bottom: solid 2px var(--accent-1);
 }
 
-#Experience {
-  position: relative;
-}
-
-#Experience .exp-card {
+.exp-card {
   transition: all 200ms ease-in;
 }
 
-#Experience:hover #ExperienceTitle {
+section:hover .section-header-pop-up {
   top: -4.5rem;
+  transition: top 400ms cubic-bezier(.19,1.25,.94,.78)
 }
 
 #Experience:hover .exp-card {
