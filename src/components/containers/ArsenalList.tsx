@@ -11,17 +11,19 @@ type ArsenalListProps = {
 };
 
 const sizes: { [id: number]: string } = {
-  1: 'w-20 h-20',
-  2: 'w-12 h-12',
+  1: 'w-32 h-32',
+  2: 'w-16 h-16',
 };
 
 const Arsenal: React.FunctionComponent<ArsenalProps> = ({ arsenal }) => {
-  const { title, grade } = arsenal;
-  const id = title.replaceAll(' ', '');
-  const size = sizes[grade];
+  const { title, grade, file, fileIdle, size } = arsenal;
+  const iconSize = size ?? sizes[grade];
+  const icon = '/assets/arsenal/' + file;
+  const iconIdle = '/assets/arsenal/' + fileIdle;
   return (
-    <div className={'bg-navy-2 rounded-full p-2 flex justify-center items-center text-center ' + size}>
-      <div className="text-light-1">{title}</div>
+    <div className={'arsenal-icon-container flex justify-center items-center text-center ' + iconSize}>
+      <img alt={title} src={iconIdle} className="arsenal-icon-idle" />
+      <img alt={title} src={icon} className="arsenal-icon" />
     </div>
   );
 };
@@ -33,7 +35,7 @@ const ArsenalList: React.FunctionComponent<ArsenalListProps> = ({ arsenalList })
   });
 
   return (
-    <div className="relative w-full flex flex-col gap-4 min-h-20 bg-navy-bg z-10 mx-4 py-4">
+    <div className="relative w-full flex flex-col gap-8 min-h-20 bg-navy-bg z-10 mx-4 py-4">
       {grades.map((g) => (
         <div key={'Arsenal-Grade-' + g} className="flex gap-4">
           {arsenalList

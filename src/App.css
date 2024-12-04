@@ -24,6 +24,10 @@ section {
   top: 0;
   transition: top 500ms cubic-bezier(.67,-0.02,0,1);
   margin-left: 1rem;
+  padding-bottom: 2rem;
+}
+
+.section-header-text {
   padding-bottom: 0.3rem;
   border-bottom: solid 2px var(--accent-1);
 }

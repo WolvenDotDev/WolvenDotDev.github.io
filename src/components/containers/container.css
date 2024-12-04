@@ -9,3 +9,28 @@
   font-family: FontAwesome;
   color: var(--accent-1)
 }
+
+.arsenal-icon-container {
+  position: relative;
+}
+
+.arsenal-icon-container > * {
+  position: absolute;
+  transition: opacity 300ms;
+}
+
+.arsenal-icon {
+  opacity: 0;
+}
+
+.arsenal-icon-idle {
+ opacity: 1;
+}
+
+.arsenal-icon-container:hover .arsenal-icon {
+  opacity: 1;
+}
+
+.arsenal-icon-container:hover .arsenal-icon-idle {
+  opacity: 0;
+}

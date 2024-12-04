@@ -53,17 +53,17 @@ const expList: DExperience[] = [
 ];
 
 const arsenalList: DArsenal[] = [
-  { title: 'React.JS', file: 'react.svg', grade: 1 },
-  { title: 'Next.JS', file: 'next.svg', grade: 1 },
-  { title: 'C#', file: 'c-sharp.svg', grade: 1 },
-  { title: 'Figma', file: 'figma.svg', grade: 1 },
-  { title: 'GoLang', file: 'golang.svg', grade: 2 },
-  { title: 'Tailwind', file: 'tailwind.svg', grade: 1 },
-  { title: 'JavaScript', file: 'javascript.svg', grade: 2 },
-  { title: 'MySQL', file: 'mysql.svg', grade: 2 },
-  { title: 'Firebase', file: 'firebase.svg', grade: 2 },
-  { title: 'Java', file: 'java.svg', grade: 2 },
-  { title: 'Oracle', file: 'oracle .svg', grade: 2 },
+  { id: 'react', title: 'React', file: 'react.svg', fileIdle: 'react-idle.svg', grade: 1 },
+  { id: 'next', title: 'Next.JS', file: 'nextjs.svg', fileIdle: 'nextjs-idle.svg', grade: 1 },
+  { id: 'c-sharp', title: 'C#', file: 'c-sharp.svg', fileIdle: 'c-sharp-idle.svg', grade: 1 },
+  { id: 'figma', title: 'Figma', file: 'figma.svg', fileIdle: 'figma-idle.svg', grade: 1 },
+  { id: 'go', title: 'Go', file: 'go.svg', fileIdle: 'go-idle.svg', grade: 2, size: 'w-24 h-16' },
+  { id: 'tailwind', title: 'Tailwind', file: 'tailwind.svg', fileIdle: 'tailwind-idle.svg', grade: 1 },
+  { id: 'javascript', title: 'JavaScript', file: 'javascript.svg', fileIdle: 'javascript-idle.svg', grade: 2 },
+  { id: 'mysql', title: 'MySQL', file: 'mysql.svg', fileIdle: 'mysql-idle.svg', grade: 2 },
+  { id: 'firebase', title: 'Firebase', file: 'firebase.svg', fileIdle: 'firebase-idle.svg', grade: 2 },
+  { id: 'java', title: 'Java', file: 'java.svg', fileIdle: 'java-idle.svg', grade: 2 },
+  { id: 'oracle', title: 'Oracle', file: 'oracle.svg', fileIdle: 'oracle-idle.svg', grade: 2 },
 ];
 
 const App: React.FC = () => {
@@ -109,7 +109,9 @@ const App: React.FC = () => {
         </p>
       </section>
       <section id="Experience" className="mt-16 mb-24 relative flex flex-col">
-        <h2 className="section-header-pop-up">Experience</h2>
+        <div className="section-header-pop-up">
+          <h2 className="section-header-text">Experience</h2>
+        </div>
         <div className="flex flex-col gap-4 bg-navy-bg z-10">
           {expList.map((exp, idx) => (
             <Experience experience={exp} key={`Exp-${idx}`} />
@@ -117,14 +119,20 @@ const App: React.FC = () => {
         </div>
       </section>
       <section id="Skills" className="mt-16 mb-24 relative flex flex-col w-full">
-        <h2 className="section-header-pop-up">Tech Arsenal</h2>
+        <div className="section-header-pop-up">
+          <h2 className="section-header-text">Tech Arsenal</h2>
+        </div>
         <ArsenalList arsenalList={arsenalList} />
       </section>
       <section id="Projects" className="mt-16 mb-24 relative">
-        <h2 className="section-header-pop-up">Projects</h2>
+        <div className="section-header-pop-up">
+          <h2 className="section-header-text">Projects</h2>
+        </div>
       </section>
       <section id="Contact" className="mt-16 mb-24 relative">
-        <h2 className="section-header-pop-up">Get In Touch</h2>
+        <div className="section-header-pop-up">
+          <h2 className="section-header-text">Get In Touch</h2>
+        </div>
       </section>
     </main>
   );
