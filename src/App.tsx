@@ -45,7 +45,7 @@ const expList: DExperience[] = [
     skills: ['Java', 'C++', 'JavaScript', 'React.JS'],
   },
   {
-    title: 'B.Sc. in Informatics',
+    title: 'Bachelor of Science in Informatics',
     company: 'Bandung Institute of Technology',
     jobdesc: ['GPA: 3.62/4.00', 'Vice Head of Publications Department at Informatics Student Union (HMIF ITB)'],
     date: '2018-2022',
@@ -56,14 +56,15 @@ const arsenalList: DArsenal[] = [
   { id: 'react', title: 'React', file: 'react.svg', fileIdle: 'react-idle.svg', grade: 1 },
   { id: 'next', title: 'Next.JS', file: 'nextjs.svg', fileIdle: 'nextjs-idle.svg', grade: 1 },
   { id: 'c-sharp', title: 'C#', file: 'c-sharp.svg', fileIdle: 'c-sharp-idle.svg', grade: 1 },
+  { id: 'tailwind', title: 'Tailwind', file: 'tailwind.svg', fileIdle: 'tailwind-idle.svg', grade: 1 },
   { id: 'figma', title: 'Figma', file: 'figma.svg', fileIdle: 'figma-idle.svg', grade: 1 },
   { id: 'go', title: 'Go', file: 'go.svg', fileIdle: 'go-idle.svg', grade: 2, size: 'w-24 h-16' },
-  { id: 'tailwind', title: 'Tailwind', file: 'tailwind.svg', fileIdle: 'tailwind-idle.svg', grade: 1 },
   { id: 'javascript', title: 'JavaScript', file: 'javascript.svg', fileIdle: 'javascript-idle.svg', grade: 2 },
-  { id: 'mysql', title: 'MySQL', file: 'mysql.svg', fileIdle: 'mysql-idle.svg', grade: 2 },
   { id: 'firebase', title: 'Firebase', file: 'firebase.svg', fileIdle: 'firebase-idle.svg', grade: 2 },
   { id: 'java', title: 'Java', file: 'java.svg', fileIdle: 'java-idle.svg', grade: 2 },
-  { id: 'oracle', title: 'Oracle', file: 'oracle.svg', fileIdle: 'oracle-idle.svg', grade: 2 },
+  { id: 'vite', title: 'Vite', file: 'java.svg', fileIdle: 'java-idle.svg', grade: 2 },
+  { id: 'mysql', title: 'MySQL', file: 'mysql.svg', fileIdle: 'mysql-idle.svg', grade: 2 },
+  { id: 'oracle', title: 'OracleDB', file: 'oracle.svg', fileIdle: 'oracle-idle.svg', grade: 2 },
 ];
 
 const App: React.FC = () => {
@@ -122,7 +123,10 @@ const App: React.FC = () => {
         <div className="section-header-pop-up">
           <h2 className="section-header-text">Tech Arsenal</h2>
         </div>
-        <ArsenalList arsenalList={arsenalList} />
+        <div className="w-full flex flex-col gap-4 bg-navy-bg z-10 mx-4 py-4">
+          <p>These are the techs that I&apos;ve used over the years. </p>
+          <ArsenalList arsenalList={arsenalList} />
+        </div>
       </section>
       <section id="Projects" className="mt-16 mb-24 relative">
         <div className="section-header-pop-up">
