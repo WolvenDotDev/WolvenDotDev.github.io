@@ -14,6 +14,7 @@ module.exports = {
                 'navy-bg': '#161A24',
                 'navy-1': '#0D172E',
                 'navy-2': '#102762',
+                'navy-3': '#072B86',
                 'neutral-1': '#B4B4B4',
                 'accent-1': '#FF9B71',
             },

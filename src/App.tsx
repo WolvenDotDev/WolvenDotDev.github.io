@@ -75,7 +75,10 @@ const App: React.FC = () => {
         <h1 className="mb-4">
           <span id="Gregorius">Gregorius</span> Jovan Kresnadi
         </h1>
-        <h3 className="text-light-1 font-medium mb-12">Software Engineer · Designer · Cyclist</h3>
+        <h3 className="text-light-1 font-medium mb-12">
+          Software Engineer <span className="text-white-1">·</span> Designer <span className="text-white-1">·</span>{' '}
+          Cyclist
+        </h3>
         <p className="text-justify">
           I currently work at{' '}
           <span>
@@ -119,6 +122,14 @@ const App: React.FC = () => {
           ))}
         </div>
       </section>
+      <section id="Projects" className="mt-16 mb-24 relative flex flex-col w-full">
+        <div className="section-header-pop-up">
+          <h2 className="section-header-text">Projects</h2>
+        </div>
+        <div className="w-full flex flex-col gap-4 bg-navy-bg z-10 mx-4 py-4">
+          <ArsenalList arsenalList={arsenalList} />
+        </div>
+      </section>
       <section id="Skills" className="mt-16 mb-24 relative flex flex-col w-full">
         <div className="section-header-pop-up">
           <h2 className="section-header-text">Tech Arsenal</h2>
@@ -126,11 +137,6 @@ const App: React.FC = () => {
         <div className="w-full flex flex-col gap-4 bg-navy-bg z-10 mx-4 py-4">
           <p>These are the techs that I&apos;ve used over the years. </p>
           <ArsenalList arsenalList={arsenalList} />
-        </div>
-      </section>
-      <section id="Projects" className="mt-16 mb-24 relative">
-        <div className="section-header-pop-up">
-          <h2 className="section-header-text">Projects</h2>
         </div>
       </section>
       <section id="Contact" className="mt-16 mb-24 relative">

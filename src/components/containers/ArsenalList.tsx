@@ -2,9 +2,6 @@ import React from 'react';
 import './container.css';
 import type { DArsenal } from '@/types/arsenal';
 
-type ArsenalProps = {
-  arsenal: DArsenal;
-};
 
 type ArsenalListProps = {
   arsenalList: DArsenal[];
@@ -24,7 +21,7 @@ const ArsenalList: React.FunctionComponent<ArsenalListProps> = ({ arsenalList })
   return (
     <div className="relative w-full flex gap-16 py-4 pl-4">
       {grades.map((g) => (
-        <ul key={'Arsenal-Grade-' + g} className={'flex flex-col gap-4 justify-between ' + sizes[g]}>
+        <ul key={'Arsenal-Grade-' + g} className={'arsenal-list flex flex-col gap-4 justify-between ' + sizes[g]}>
           {arsenalList
             .filter((ars) => ars.grade == g)
             .map((ars) => (

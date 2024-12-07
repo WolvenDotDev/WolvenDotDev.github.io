@@ -27,7 +27,7 @@ const Experience: React.FunctionComponent<ExpProps> = ({ experience }) => {
           {skills &&
             skills.map((skill, idx) => (
               <li
-                className="bg-opacity-90 bg-navy-2 rounded-full py-1 px-3 text-sm font-medium text-light-1"
+                className="bg-navy-3/80 rounded-full py-1 px-3 text-sm font-medium text-light-1"
                 key={`${id}-skill-${idx}}`}
               >
                 {skill}

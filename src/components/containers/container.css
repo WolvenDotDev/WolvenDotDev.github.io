@@ -1,10 +1,10 @@
-li {
+.jobdesc-list li, .arsenal-list li {
   /* position: relative; */
   padding-left: 0.75rem;
   line-height: 1.3;
 }
 
-li::marker {
+.jobdesc-list li::marker, .arsenal-list li::marker {
   content: "\f0da"; /* FontAwesome Unicode */
   font-family: FontAwesome;
   color: var(--accent-1)
