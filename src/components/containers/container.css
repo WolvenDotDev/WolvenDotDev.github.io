@@ -10,27 +10,12 @@
   color: var(--accent-1)
 }
 
-.arsenal-icon-container {
-  position: relative;
+.project-card .link-icon {
+  transform: translateY(0.8rem);
+  transition: transform 300ms var(--cb-snap-off);
 }
 
-.arsenal-icon-container > * {
-  position: absolute;
-  transition: opacity 300ms;
-}
-
-.arsenal-icon {
-  opacity: 0;
-}
-
-.arsenal-icon-idle {
- opacity: 1;
-}
-
-.arsenal-icon-container:hover .arsenal-icon {
-  opacity: 1;
-}
-
-.arsenal-icon-container:hover .arsenal-icon-idle {
-  opacity: 0;
+.project-card:hover .link-icon {
+  transform: translateY(0rem);
+  transition: transform 300ms var(--cb-snap-on);
 }

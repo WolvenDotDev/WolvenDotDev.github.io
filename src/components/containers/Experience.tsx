@@ -7,12 +7,11 @@ type ExpProps = {
 };
 
 const Experience: React.FunctionComponent<ExpProps> = ({ experience }) => {
-  const { title, company, description, jobdesc, date, skills } = experience;
-  const id = title.replaceAll(' ', '');
+  const { id, title, company, description, jobdesc, date, skills } = experience;
   return (
     <div className="exp-card flex transition-colors duration-200 hover:opacity-100 hover:bg-light-1 hover:bg-opacity-5 rounded-lg p-4">
-      <div className="w-1/4 text-light-1">{date}</div>
-      <div className="w-3/4 flex flex-col gap-4">
+      <div className="w-1/5 text-light-1">{date}</div>
+      <div className="w-4/5 flex flex-col gap-4">
         <h4>
           {title} · {company}
         </h4>

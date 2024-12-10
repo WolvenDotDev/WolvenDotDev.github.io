@@ -17,14 +17,33 @@ section {
   transition: opacity 300ms ease-in;
 }
 
+#Jovan {
+text-decoration: none;
+background-image: linear-gradient(var(--accent-1), var(--accent-1));
+background-size: 0% 0.1em;
+background-position-y: 100%;
+background-position-x: 100%;
+background-repeat: no-repeat;
+transition: background-size 0.2s ease-in-out;
+}
+
+#FullName:hover #Jovan,
+#FullName:focus #Jovan,
+#FullName:active #Jovan {
+background-size: 100% 0.1em;
+background-position-x: 0%;
+}
+
+
 .section-header-pop-up {
   z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
-  transition: top 500ms cubic-bezier(.67,-0.02,0,1);
+  transition: top 500ms var(--cb-snap-off);
   margin-left: 1rem;
   padding-bottom: 2rem;
+  transition-delay: 500ms;
 }
 
 .section-header-text {
@@ -38,13 +57,14 @@ section {
 
 section:hover .section-header-pop-up {
   top: -4.5rem;
-  transition: top 400ms cubic-bezier(.19,1.25,.94,.78)
+  transition: top 400ms var(--cb-snap-on);
+  transition-delay: 0ms;
 }
 
-#Experience:hover .exp-card {
+#Experience:hover .exp-card, #Projects:hover .project-card {
   opacity: 0.65;
 }
 
-#Experience .exp-card:hover {
+#Experience .exp-card:hover, #Projects .project-card:hover {
   opacity: 1;
 }

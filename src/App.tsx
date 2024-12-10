@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import type { DExperience } from '@/types/experience';
-import type { DArsenal } from '@/types/arsenal';
+import type { DProject } from '@/types/project';
 import Experience from './components/containers/Experience';
-import ArsenalList from './components/containers/ArsenalList';
+import Project from './components/containers/Project';
 
 const expList: DExperience[] = [
   {
+    id: 'solecode',
     title: 'Software Engineer',
     company: 'Solecode',
     jobdesc: [
@@ -18,6 +19,7 @@ const expList: DExperience[] = [
     skills: ['JavaScript', 'C#', '.NET', 'Azure'],
   },
   {
+    id: 'dana',
     title: 'Front End SDET Intern',
     company: 'DANA',
     jobdesc: [
@@ -27,6 +29,7 @@ const expList: DExperience[] = [
     skills: ['Java', 'Cucumber'],
   },
   {
+    id: 'blibli',
     title: 'SDET Intern',
     company: 'Blibli.com',
     jobdesc: [
@@ -36,6 +39,7 @@ const expList: DExperience[] = [
     skills: ['Java', 'Cucumber', 'Kafka'],
   },
   {
+    id: 'lab-assistant',
     title: 'Programming Lab Assistant',
     company: 'Bandung Institute of Technology',
     description:
@@ -45,6 +49,7 @@ const expList: DExperience[] = [
     skills: ['Java', 'C++', 'JavaScript', 'React.JS'],
   },
   {
+    id: 'itb',
     title: 'Bachelor of Science in Informatics',
     company: 'Bandung Institute of Technology',
     jobdesc: ['GPA: 3.62/4.00', 'Vice Head of Publications Department at Informatics Student Union (HMIF ITB)'],
@@ -52,19 +57,29 @@ const expList: DExperience[] = [
   },
 ];
 
-const arsenalList: DArsenal[] = [
-  { id: 'react', title: 'React', file: 'react.svg', fileIdle: 'react-idle.svg', grade: 1 },
-  { id: 'next', title: 'Next.JS', file: 'nextjs.svg', fileIdle: 'nextjs-idle.svg', grade: 1 },
-  { id: 'c-sharp', title: 'C#', file: 'c-sharp.svg', fileIdle: 'c-sharp-idle.svg', grade: 1 },
-  { id: 'tailwind', title: 'Tailwind', file: 'tailwind.svg', fileIdle: 'tailwind-idle.svg', grade: 1 },
-  { id: 'figma', title: 'Figma', file: 'figma.svg', fileIdle: 'figma-idle.svg', grade: 1 },
-  { id: 'go', title: 'Go', file: 'go.svg', fileIdle: 'go-idle.svg', grade: 2, size: 'w-24 h-16' },
-  { id: 'javascript', title: 'JavaScript', file: 'javascript.svg', fileIdle: 'javascript-idle.svg', grade: 2 },
-  { id: 'firebase', title: 'Firebase', file: 'firebase.svg', fileIdle: 'firebase-idle.svg', grade: 2 },
-  { id: 'java', title: 'Java', file: 'java.svg', fileIdle: 'java-idle.svg', grade: 2 },
-  { id: 'vite', title: 'Vite', file: 'java.svg', fileIdle: 'java-idle.svg', grade: 2 },
-  { id: 'mysql', title: 'MySQL', file: 'mysql.svg', fileIdle: 'mysql-idle.svg', grade: 2 },
-  { id: 'oracle', title: 'OracleDB', file: 'oracle.svg', fileIdle: 'oracle-idle.svg', grade: 2 },
+const projectList: DProject[] = [
+  {
+    id: 'porsee',
+    title: 'Porsee',
+    iconFile: 'PorseeIcon.svg',
+    file: '',
+    url: 'https://porsee-website-demo.vercel.app/',
+    description:
+      'Porsee is an Indonesian food catering service delivering fresh ready-to-cook ingredients to your doorstep. Porsee aims to bring restaurant quality food to your home kitchen, complete with the experience of cooking it yourself. I developed the website using NextJS and Firebase as the Backend, deployed to a Digital Ocean droplet with Docker to support containerization.',
+    date: '2023',
+    techs: ['NextJS', 'Typescript', 'Tailwind', 'Firebase', 'Digital Ocean', 'Docker'],
+  },
+  {
+    id: 'wolvendev',
+    title: 'wolven.dev',
+    iconFile: 'WolvenDev.png',
+    file: '',
+    url: 'https://wolven.dev/',
+    description:
+      "It's basically this website... \n I used Vite React with Typescript, and Tailwind to style and the occasional vanilla CSS to help out with complex animations.",
+    date: '2023',
+    techs: ['Vite', 'React', 'Typescript', 'Tailwind CSS'],
+  },
 ];
 
 const App: React.FC = () => {
@@ -72,8 +87,8 @@ const App: React.FC = () => {
     <main className="App">
       <section id="About" className="mt-40 mb-32 px-5">
         <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
-        <h1 className="mb-4">
-          <span id="Gregorius">Gregorius</span> Jovan Kresnadi
+        <h1 className="mb-4" id="FullName">
+          Gregorius <span id="Jovan">Jovan</span> Kresnadi
         </h1>
         <h3 className="text-light-1 font-medium mb-12">
           Software Engineer <span className="text-white-1">·</span> Designer <span className="text-white-1">·</span>{' '}
@@ -98,12 +113,12 @@ const App: React.FC = () => {
               side projects
             </a>
           </span>{' '}
-          to keep my tech arsenal fresh. Mainly I choose Next.JS, Tailwind, and GoLang as my preferred tools of the
-          trade, but I try to diversify to not look everything as a nail.
+          to keep my tech arsenal fresh. Mainly I choose Next.JS, Tailwind, and Go as my preferred tools of the trade,
+          but I try to diversify to not look everything as a nail.
         </p>
         <br />
         <p>
-          If you don&apos;t see me coding, then you can find me either on{' '}
+          If you don&apos;t see me coding, you can find me either on{' '}
           <span>
             <a href="https://www.instagram.com/sang.pemuja.baja" target="_blank" rel="noreferrer">
               two wheels
@@ -117,8 +132,8 @@ const App: React.FC = () => {
           <h2 className="section-header-text">Experience</h2>
         </div>
         <div className="flex flex-col gap-4 bg-navy-bg z-10">
-          {expList.map((exp, idx) => (
-            <Experience experience={exp} key={`Exp-${idx}`} />
+          {expList.map((exp) => (
+            <Experience experience={exp} key={`Exp-${exp.id}`} />
           ))}
         </div>
       </section>
@@ -126,17 +141,10 @@ const App: React.FC = () => {
         <div className="section-header-pop-up">
           <h2 className="section-header-text">Projects</h2>
         </div>
-        <div className="w-full flex flex-col gap-4 bg-navy-bg z-10 mx-4 py-4">
-          <ArsenalList arsenalList={arsenalList} />
-        </div>
-      </section>
-      <section id="Skills" className="mt-16 mb-24 relative flex flex-col w-full">
-        <div className="section-header-pop-up">
-          <h2 className="section-header-text">Tech Arsenal</h2>
-        </div>
-        <div className="w-full flex flex-col gap-4 bg-navy-bg z-10 mx-4 py-4">
-          <p>These are the techs that I&apos;ve used over the years. </p>
-          <ArsenalList arsenalList={arsenalList} />
+        <div className="flex flex-col gap-8 bg-navy-bg z-10">
+          {projectList.map((proj) => (
+            <Project project={proj} key={`Proj-${proj.id}`} />
+          ))}
         </div>
       </section>
       <section id="Contact" className="mt-16 mb-24 relative">
