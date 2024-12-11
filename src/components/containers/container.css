@@ -10,6 +10,10 @@
   color: var(--accent-1)
 }
 
+.exp-card {
+  transition: all 200ms ease-in;
+}
+
 .project-card .link-icon {
   transform: translateY(0.8rem);
   transition: transform 300ms var(--cb-snap-off);

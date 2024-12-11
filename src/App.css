@@ -29,20 +29,20 @@ section {
 }
 
 #Jovan {
-text-decoration: none;
-background-image: linear-gradient(var(--accent-1), var(--accent-1));
-background-size: 0% 0.1em;
-background-position-y: 100%;
-background-position-x: 100%;
-background-repeat: no-repeat;
-transition: background-size 0.2s ease-in-out;
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent-1), var(--accent-1));
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
 }
 
 #About:hover #Jovan,
 #About:focus #Jovan,
 #About:active #Jovan {
-background-size: 100% 0.1em;
-background-position-x: 0%;
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
 }
 
 
@@ -62,10 +62,6 @@ background-position-x: 0%;
   border-bottom: solid 2px var(--accent-1);
 }
 
-.exp-card {
-  transition: all 200ms ease-in;
-}
-
 section:hover .section-header-pop-up {
   top: -4.5rem;
   transition: top 400ms var(--cb-snap-on);
@@ -78,4 +74,100 @@ section:hover .section-header-pop-up {
 
 #Experience .exp-card:hover, #Projects .project-card:hover {
   opacity: 1;
+}
+
+#MailToButton {
+  box-sizing: border-box;
+  padding: 1.5rem 2rem;
+  color: white;
+  
+  background-image: linear-gradient(var(--accent-2), var(--accent-2));
+  background-size: 85% 70%;
+  background-position-y: 250%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out, mask-size 0.3s ease-in-out;
+  
+  mask-image: linear-gradient(white, white);
+  mask-repeat: no-repeat;
+  mask-size: 85% 60%;
+  mask-position: 50% 50%;
+}
+#MailToButton.hovered {
+  animation-name: mail-cta;
+  animation-duration: 700ms;
+  animation-direction: reverse;
+  animation-delay: 100ms;
+}
+
+#MailToButton h4 {
+  padding: 0.5rem 1rem; 
+  overflow: auto;
+}
+
+@keyframes mail-cta {
+  0% {
+    mask-size: 85% 60%;
+    background-size: 85% 70%;
+    background-position-y: 220%;
+  }
+  35% {
+    background-position-y: 50%;
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+    
+  }
+  70% {
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+    background-position-y: 50%;
+    
+  }
+  100% {
+    mask-size: 100% 100%;
+    background-position-y: 50%;
+    background-size: 100% 100%;
+    
+  }
+}
+
+@keyframes mail-cta1 {
+  0% {
+    mask-size: 85% 60%;
+    background-size: 85% 70%;
+    background-position-y: 220%;
+  }
+  35% {
+    background-position-y: 50%;
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+    
+  }
+  70% {
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+    background-position-y: 50%;
+    
+  }
+  100% {
+    mask-size: 100% 100%;
+    background-position-y: 50%;
+    background-size: 100% 100%;
+    
+  }
+}
+
+#MailToButton.hover {
+  color: white;
+  background-size: 100% 100%;
+  background-position-y: 50%;
+  mask-size: 100% 100%;
+  animation-name: mail-cta1;
+  animation-duration: 700ms;
+  /* animation-direction: reverse; */
+}
+
+footer a  {
+  font-weight: 500;
+  color: var(--light-1);
 }

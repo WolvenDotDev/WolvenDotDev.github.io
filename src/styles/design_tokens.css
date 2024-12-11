@@ -9,6 +9,7 @@
   --val--navy-3: 7, 43, 134;
   --val--neutral-1: 180, 180, 180;
   --val--accent-1: 255, 155, 113;
+  --val--accent-2: 248, 89, 53;
   --val--white-true: 255, 255, 255;
   
   --black-1: rgb(var(--val--black-1));
@@ -20,6 +21,7 @@
   --navy-3: rgb(var(--val--navy-3));
   --neutral-1: rgb(var(--val--neutral-1));
   --accent-1: rgb(var(--val--accent-1));
+  --accent-2: rgb(var(--val--accent-2));
   --white-true: rgb(var(--val--white-true));
 
   --cb-snap-on: cubic-bezier(.19,1.25,.94,.78);
