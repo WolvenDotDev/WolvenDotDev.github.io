@@ -17,6 +17,7 @@ module.exports = {
                 'navy-3': '#072B86',
                 'neutral-1': '#B4B4B4',
                 'accent-1': '#FF9B71',
+                'accent-2': '#FF6D38',
             },
             screens: {
                 'xs': '320px',

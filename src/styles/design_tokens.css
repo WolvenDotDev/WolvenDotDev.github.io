@@ -24,6 +24,7 @@
   --accent-2: rgb(var(--val--accent-2));
   --white-true: rgb(var(--val--white-true));
 
-  --cb-snap-on: cubic-bezier(.19,1.25,.94,.78);
+  --cb-snap-on: cubic-bezier(.67,-0.02,0,1);
+  /* --cb-snap-on: cubic-bezier(.19,1.25,.94,.78); */
   --cb-snap-off: cubic-bezier(.67,-0.02,0,1);
 }

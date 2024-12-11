@@ -25,7 +25,7 @@ section {
 }
 
 .home-icon:hover, .home-icon:active, .home-icon:focus {
-  color: var(--white-true);
+  color: var(--accent-1);
 }
 
 #Jovan {
@@ -45,6 +45,14 @@ section {
   background-position-x: 0%;
 }
 
+#About a {
+  color: var(--light-1);
+}
+
+#About a:hover {
+  color: var(--accent-1);
+}
+
 
 .section-header-pop-up {
   z-index: 1;
@@ -59,7 +67,7 @@ section {
 
 .section-header-text {
   padding-bottom: 0.3rem;
-  border-bottom: solid 2px var(--accent-1);
+  border-bottom: solid 0.1em var(--accent-1);
 }
 
 section:hover .section-header-pop-up {
@@ -74,6 +82,16 @@ section:hover .section-header-pop-up {
 
 #Experience .exp-card:hover, #Projects .project-card:hover {
   opacity: 1;
+}
+
+#Resume .link-icon {
+  transform: translateY(0rem);
+  transition: transform 300ms var(--cb-snap-off);
+}
+
+#Resume:hover .link-icon {
+  transform: translateY(-0.4rem);
+  transition: transform 300ms var(--cb-snap-on);
 }
 
 #MailToButton {

@@ -1,7 +1,8 @@
 import React from 'react';
 
 type IconProps = {
-  className: string;
+  className?: string;
+  id?: string;
 };
 
 export const LinkedIn = (props: IconProps) => {
@@ -13,6 +14,7 @@ export const LinkedIn = (props: IconProps) => {
       height="50px"
       fillRule="nonzero"
       className={props.className}
+      id={props.id}
     >
       <g
         fill="currentColor"
@@ -46,6 +48,7 @@ export const GitHub = (props: IconProps) => {
       height="96"
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
+      id={props.id}
     >
       <path
         fillRule="evenodd"
@@ -66,10 +69,33 @@ export const BlueSky = (props: IconProps) => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
+      id={props.id}
     >
       <path
         d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"
         fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const Mail = (props: IconProps) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className={props.className} id={props.id}>
+      <path
+        fill="currentColor"
+        d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+      />
+    </svg>
+  );
+};
+
+export const File = (props: IconProps) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className={props.className} id={props.id}>
+      <path
+        fill="currentColor"
+        d="M320 464c8.8 0 16-7.2 16-16l0-288-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l256 0zM0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64z"
       />
     </svg>
   );

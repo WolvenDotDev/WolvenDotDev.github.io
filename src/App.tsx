@@ -4,7 +4,7 @@ import type { DExperience } from '@/types/experience';
 import type { DProject } from '@/types/project';
 import Experience from './components/containers/Experience';
 import Project from './components/containers/Project';
-import { GitHub, LinkedIn, BlueSky } from './assets/Icons';
+import { GitHub, LinkedIn, BlueSky, Mail, File } from './assets/Icons';
 
 // #region Data
 const expList: DExperience[] = [
@@ -80,7 +80,7 @@ const projectList: DProject[] = [
     description:
       "It's basically this website... \n I used Vite React with Typescript, and Tailwind to style and the occasional vanilla CSS to help out with complex animations.",
     date: '2023',
-    techs: ['Vite', 'React', 'Figma', 'Typescript', 'Tailwind CSS'],
+    techs: ['Vite', 'React', 'Figma', 'Typescript', 'Tailwind'],
   },
 ];
 // #endregion
@@ -95,11 +95,11 @@ const App: React.FC = () => {
         <h1 className="mb-4" id="FullName">
           Gregorius <span id="Jovan">Jovan</span> Kresnadi
         </h1>
-        <h4 className="text-light-1 font-medium mb-8">
+        <h4 className="text-light-1 font-medium mb-4">
           Software Engineer <span className="text-white-1">·</span> Designer <span className="text-white-1">·</span>{' '}
           Cyclist
         </h4>
-        <div className="mb-8 flex items-center gap-8">
+        <div className="mb-8 flex items-center gap-6">
           <a href="https://github.com/Wolven.Dev" target="_blank" rel="noreferrer">
             <GitHub className="home-icon" />
           </a>
@@ -108,6 +108,9 @@ const App: React.FC = () => {
           </a>
           <a href="https://bsky.app/profile/wolven.dev" target="_blank" rel="noreferrer">
             <BlueSky className="home-icon" />
+          </a>
+          <a href="mailto:jovan.kresnadi@wolven.dev">
+            <Mail className="home-icon" />
           </a>
         </div>
         <p className="text-justify">
@@ -146,6 +149,17 @@ const App: React.FC = () => {
             <Experience experience={exp} key={`Exp-${exp.id}`} />
           ))}
         </div>
+        <div className="mt-8 flex justify-center items-center ">
+          <a
+            id="Resume"
+            className="hover:text-accent-2 flex pb-2 border-b-2 border-b-accent-1 gap-2 items-center"
+            href="/Resume_Gregorius Jovan Kresnadi.pdf"
+            target="_blank"
+          >
+            <h4>Check Out Full Résumé</h4>
+            <File className="w-6 h-6 link-icon" />
+          </a>
+        </div>
       </section>
       <section id="Projects" className="my-16 relative flex flex-col w-full">
         <div className="section-header-pop-up">
@@ -175,12 +189,12 @@ const App: React.FC = () => {
           className={'font-mono text-lg ' + hovered}
           href="mailto:jovan.kresnadi@wolven.dev"
         >
-          Get In Touch
+          <h3>Get In Touch</h3>
         </a>
       </section>
-      <footer className="w-full my-8 flex flex-col items-center gap-2 text-neutral-1">
-        <div className="text-xs">Designed & built by yours truly.</div>
-        <div className="text-xs font-light">
+      <footer className="w-full my-8 flex flex-col items-center gap-2 text-neutral-1 text-xs font-light">
+        <div>Designed & built by yours truly.</div>
+        <div>
           Icons by{' '}
           <a target="_blank" href="https://icons8.com" rel="noreferrer">
             Icons8
@@ -189,7 +203,7 @@ const App: React.FC = () => {
           <a target="_blank" href="https://fontawesome.com/" rel="noreferrer">
             FontAwesome
           </a>
-          . All text is set either in the{' '}
+          . Text is set either in the{' '}
           <a target="_blank" href="https://rsms.me/inter/" rel="noreferrer">
             Inter
           </a>{' '}
@@ -199,6 +213,7 @@ const App: React.FC = () => {
           </a>{' '}
           typeface.
         </div>
+        <div className="text-white-1">© 2024 wolven.dev</div>
       </footer>
     </main>
   );
