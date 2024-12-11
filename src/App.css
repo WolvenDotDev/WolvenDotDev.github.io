@@ -17,6 +17,17 @@ section {
   transition: opacity 300ms ease-in;
 }
 
+.home-icon {
+  color: var(--neutral-1);
+  width: 2rem;
+  height: 2rem;
+  transition: color 200ms ease-in-out;
+}
+
+.home-icon:hover, .home-icon:active, .home-icon:focus {
+  color: var(--white-true);
+}
+
 #Jovan {
 text-decoration: none;
 background-image: linear-gradient(var(--accent-1), var(--accent-1));
@@ -27,9 +38,9 @@ background-repeat: no-repeat;
 transition: background-size 0.2s ease-in-out;
 }
 
-#FullName:hover #Jovan,
-#FullName:focus #Jovan,
-#FullName:active #Jovan {
+#About:hover #Jovan,
+#About:focus #Jovan,
+#About:active #Jovan {
 background-size: 100% 0.1em;
 background-position-x: 0%;
 }

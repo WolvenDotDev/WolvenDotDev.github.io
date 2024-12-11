@@ -4,6 +4,7 @@ import type { DExperience } from '@/types/experience';
 import type { DProject } from '@/types/project';
 import Experience from './components/containers/Experience';
 import Project from './components/containers/Project';
+import { GitHub, LinkedIn, BlueSky } from './assets/Icons';
 
 const expList: DExperience[] = [
   {
@@ -85,15 +86,26 @@ const projectList: DProject[] = [
 const App: React.FC = () => {
   return (
     <main className="App">
-      <section id="About" className="mt-40 mb-32 px-5">
+      <section id="About" className="my-16 lg:mt-40 lg:mb-32 px-5">
         <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
         <h1 className="mb-4" id="FullName">
           Gregorius <span id="Jovan">Jovan</span> Kresnadi
         </h1>
-        <h3 className="text-light-1 font-medium mb-12">
+        <h4 className="text-light-1 font-medium mb-8">
           Software Engineer <span className="text-white-1">·</span> Designer <span className="text-white-1">·</span>{' '}
           Cyclist
-        </h3>
+        </h4>
+        <div className="mb-8 flex items-center gap-8">
+          <a href="https://github.com/Wolven.Dev" target="_blank" rel="noreferrer">
+            <GitHub className="home-icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/gregorius-jovan-kresnadi/" target="_blank" rel="noreferrer">
+            <LinkedIn className="home-icon" />
+          </a>
+          <a href="https://bsky.app/profile/wolven.dev" target="_blank" rel="noreferrer">
+            <BlueSky className="home-icon" />
+          </a>
+        </div>
         <p className="text-justify">
           I currently work at{' '}
           <span>
