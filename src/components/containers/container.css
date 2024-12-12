@@ -10,6 +10,18 @@
   color: var(--accent-1)
 }
 
+#Experience .exp-card, #Projects .project-card {
+  transition: opacity 150ms linear, background-color 100ms ease-in-out;
+}
+
+#Experience:hover .exp-card, #Projects:hover .project-card {
+  opacity: 0.65;
+}
+
+#Experience .exp-card:hover, #Projects .project-card:hover {
+  opacity: 1;
+}
+
 .exp-card {
   transition: all 200ms ease-in;
 }

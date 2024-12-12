@@ -76,14 +76,6 @@ section:hover .section-header-pop-up {
   transition-delay: 0ms;
 }
 
-#Experience:hover .exp-card, #Projects:hover .project-card {
-  opacity: 0.65;
-}
-
-#Experience .exp-card:hover, #Projects .project-card:hover {
-  opacity: 1;
-}
-
 #Resume .link-icon {
   transform: translateY(0rem);
   transition: transform 300ms var(--cb-snap-off);

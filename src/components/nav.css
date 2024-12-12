@@ -1,0 +1,39 @@
+#Nav-Container {
+  position:sticky;
+  top: 30%;
+  right: 0;
+  /* right: -10rem; */
+  z-index: 100;
+}
+
+#Nav-Alt, #Nav{
+  position: absolute;
+  top: 0;
+  right: 0; 
+}
+
+#Nav-Alt {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  z-index: 110;
+}
+
+#Nav-Alt .nav-alt-item {
+  border: none;
+  height: 0.2em;
+  color: var(--white-true);
+  background-color: var(--white-true);
+}
+#Nav-Alt .nav-alt-item::after {
+  content: ''
+  
+}
+
+#Nav {
+  width: 12rem;
+  z-index: 120;
+}
+
