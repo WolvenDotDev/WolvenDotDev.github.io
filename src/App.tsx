@@ -144,7 +144,7 @@ const App: React.FC = () => {
         <div className="section-header-pop-up">
           <h2 className="section-header-text">Experience</h2>
         </div>
-        <div className="flex flex-col gap-4 bg-navy-bg z-10">
+        <div className="flex flex-col lg:gap-4 gap-8 bg-navy-bg z-10">
           {expList.map((exp) => (
             <Experience experience={exp} key={`Exp-${exp.id}`} />
           ))}
@@ -192,7 +192,7 @@ const App: React.FC = () => {
           <h3>Get In Touch</h3>
         </a>
       </section>
-      <footer className="w-full my-8 flex flex-col items-center gap-2 text-neutral-1 text-xs font-light">
+      <footer className="w-full my-8 flex flex-col items-center gap-2 text-neutral-1 text-xs font-light text-center">
         <div>Designed & built by yours truly.</div>
         <div>
           Icons by{' '}

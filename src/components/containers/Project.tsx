@@ -21,13 +21,13 @@ const Project: React.FunctionComponent<ProjectProps> = ({ project }) => {
         <h3 className="title">{title}</h3>
         <i className="link-icon fa fa-link"></i>
       </div>
-      {description && <p className="mx-3">{description}</p>}
+      {description && <p className="lg:mx-3">{description}</p>}
 
-      <ul className="flex gap-3">
+      <ul className="flex flex-wrap gap-3">
         {techs &&
           techs.map((skill, idx) => (
             <li
-              className="bg-opacity-90 bg-navy-2 rounded-full py-1 px-3 text-sm font-medium text-light-1"
+              className="bg-navy-3/60 rounded-full py-1 px-3 text-sm font-medium text-light-1"
               key={`${id}-skill-${idx}}`}
             >
               {skill}
