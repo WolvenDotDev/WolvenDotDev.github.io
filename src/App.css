@@ -40,7 +40,8 @@ section {
 
 #About:hover #Jovan,
 #About:focus #Jovan,
-#About:active #Jovan {
+#About:active #Jovan,
+.section-active #Jovan {
   background-size: 100% 0.1em;
   background-position-x: 0%;
 }
@@ -53,12 +54,11 @@ section {
   color: var(--accent-1);
 }
 
-
 .section-header-pop-up {
   z-index: 1;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 4.5rem;
   transition: top 500ms var(--cb-snap-off);
   margin-left: 1rem;
   padding-bottom: 2rem;
@@ -70,8 +70,8 @@ section {
   border-bottom: solid 0.1em var(--accent-1);
 }
 
-section:hover .section-header-pop-up {
-  top: -4.5rem;
+.section-active .section-header-pop-up {
+  top: 0.5rem;
   transition: top 400ms var(--cb-snap-on);
   transition-delay: 0ms;
 }

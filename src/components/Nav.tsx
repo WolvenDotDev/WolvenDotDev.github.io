@@ -1,34 +1,47 @@
 import React from 'react';
 import './nav.css';
 
-interface NavProps {}
+interface NavProps {
+  nav: string;
+  setNav: (value: string | ((prevVar: string) => string)) => void;
+}
 
-const Nav: React.FC<NavProps> = ({}) => {
+const Navigations = [
+  { id: 'About', label: 'About' },
+  { id: 'Experience', label: 'Experience' },
+  { id: 'Projects', label: 'Projects' },
+  { id: 'Contact', label: 'Contact Me' },
+];
+
+const Nav: React.FC<NavProps> = (props) => {
+  const { nav, setNav } = props;
   return (
-    // <div id="Nav-Region">
-      <div id="Nav-Container">
-        <div id="Nav-Alt">
-          <hr id="Nav-Alt-About" className="nav-alt-item" />
-          <hr id="Nav-Alt-Experience" className="nav-alt-item" />
-          <hr id="Nav-Alt-Projects" className="nav-alt-item" />
-          <hr id="Nav-Alt-Contact" className="nav-alt-item" />
-        </div>
-        <nav id="Nav">
-          <div id="Nav-About" className="nav-item">
-            About
+    <div id="Nav-Container">
+      <nav id="Nav">
+        {Navigations.map((n) => (
+          <a
+            onClick={() => setNav(n.id)}
+            href={'#' + n.id}
+            key={'Nav-' + n.id}
+            id={'Nav-' + n.id}
+            className={'nav-item ' + (n.id == nav && ' selected')}
+          >
+            {n.label}
+          </a>
+        ))}
+      </nav>
+      <div id="Nav-Alt">
+        {Navigations.map((n) => (
+          <div
+            key={'Nav-Alt-' + n.id}
+            id={'Nav-Alt-' + n.id}
+            className={'nav-alt-item ' + (n.id == nav && ' selected')}
+          >
+            <hr className="nav-alt-bar" />
           </div>
-          <div id="Nav-Experience" className="nav-item">
-            Experience
-          </div>
-          <div id="Nav-Projects" className="nav-item">
-            Projects
-          </div>
-          <div id="Nav-Contact" className="nav-item">
-            Contact Me
-          </div>
-        </nav>
+        ))}
       </div>
-    // </div>
+    </div>
   );
 };
 

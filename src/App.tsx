@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.css';
 import type { DExperience } from '@/types/experience';
 import type { DProject } from '@/types/project';
+import React, { useEffect, useRef, useState } from 'react';
+import './App.css';
+import { BlueSky, File, GitHub, LinkedIn, Mail } from './assets/Icons';
 import Experience from './components/containers/Experience';
 import Project from './components/containers/Project';
-import { GitHub, LinkedIn, BlueSky, Mail, File } from './assets/Icons';
 import Nav from './components/Nav';
 
 // #region Data
@@ -88,12 +88,38 @@ const projectList: DProject[] = [
 
 const App: React.FC = () => {
   const [hovered, setHovered] = useState('');
+  const [nav, setNav] = useState('About');
+  const [isVisible, setIsVisible] = useState(false);
+
+  const containerRef = useRef(null);
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) console.log(entry);
+    });
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+
+  const options = {
+    rootMargin: '0px',
+    threshold: 0.4,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
 
   return (
     <>
-      <Nav />
+      <Nav nav={nav} setNav={setNav} />
       <main className="App">
-        <section id="About" className="my-16 lg:mt-40 lg:mb-32 px-5">
+        <section id="About" className={'py-4 my-12 lg:mt-32 px-5' + (nav == 'About' ? ' section-active' : '')}>
           <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
           <h1 className="mb-4" id="FullName">
             Gregorius <span id="Jovan">Jovan</span> Kresnadi
@@ -143,7 +169,11 @@ const App: React.FC = () => {
             , on foot, in the gym, or on my gaming rig.
           </p>
         </section>
-        <section id="Experience" className="mt-16 mb-24 relative flex flex-col">
+        <section
+          id="Experience"
+          className={'pt-20 mb-16 relative flex flex-col' + (isVisible ? ' section-active' : '')}
+          ref={containerRef}
+        >
           <div className="section-header-pop-up">
             <h2 className="section-header-text">Experience</h2>
           </div>
@@ -164,7 +194,10 @@ const App: React.FC = () => {
             </a>
           </div>
         </section>
-        <section id="Projects" className="my-16 relative flex flex-col w-full">
+        <section
+          id="Projects"
+          className={'pt-20 mb-12 relative flex flex-col w-full' + (nav == 'Projects' ? ' section-active' : '')}
+        >
           <div className="section-header-pop-up">
             <h2 className="section-header-text">Projects</h2>
           </div>
@@ -179,14 +212,14 @@ const App: React.FC = () => {
             onMouseLeave={() => {
               setHovered('hovered');
             }}
+            onBlur={() => {
+              setHovered('hovered');
+            }}
             onMouseOver={() => {
               setHovered('hover');
             }}
             onFocus={() => {
               setHovered('hover');
-            }}
-            onBlur={() => {
-              setHovered('hovered');
             }}
             id="MailToButton"
             className={'font-mono text-lg ' + hovered}
