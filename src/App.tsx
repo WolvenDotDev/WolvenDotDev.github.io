@@ -89,37 +89,80 @@ const projectList: DProject[] = [
 const App: React.FC = () => {
   const [hovered, setHovered] = useState('');
   const [nav, setNav] = useState('About');
-  const [isVisible, setIsVisible] = useState(false);
 
-  const containerRef = useRef(null);
+  const aboutRef = useRef(null);
+  const expRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) console.log(entry);
-    });
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
+  const sections = [
+    {
+      id: 'About',
+      threshold: 1,
+      ref: aboutRef,
+    },
+    {
+      id: 'Experience',
+      threshold: 0.2,
+      ref: expRef,
+    },
+    {
+      id: 'Projects',
+      threshold: 0.4,
+      ref: projectsRef,
+    },
+    {
+      id: 'Contact',
+      threshold: 1,
+      ref: contactRef,
+    },
+  ];
 
-  const options = {
-    rootMargin: '0px',
-    threshold: 0.4,
-  };
+  const sectionObservers = sections.map((sec) => {
+    const { threshold, ref } = sec;
+    const options = {
+      rootMargin: '0px',
+      threshold: threshold,
+    };
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      const entry = entries[0];
+      // console.log(entries);
+
+      if (entry.isIntersecting) {
+        console.log(entry.target.id);
+        setNav(entry.target.id);
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, options);
+    return { observer, ref };
+  });
+
+  const refs = [aboutRef, expRef, projectsRef, contactRef];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(observerCallback, options);
-    if (containerRef.current) observer.observe(containerRef.current);
+    sectionObservers.forEach((so) => {
+      const { observer, ref } = so;
+      if (ref.current) observer.observe(ref.current);
+    });
 
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      sectionObservers.forEach((so) => {
+        const { observer, ref } = so;
+        if (ref.current) observer.unobserve(ref.current);
+      });
     };
-  }, [containerRef, options]);
+  }, [...refs]);
 
   return (
     <>
       <Nav nav={nav} setNav={setNav} />
       <main className="App">
-        <section id="About" className={'py-4 my-12 lg:mt-32 px-5' + (nav == 'About' ? ' section-active' : '')}>
+        <section
+          ref={aboutRef}
+          id="About"
+          className={'py-4 my-12 lg:mt-32 px-5' + (nav == 'About' ? ' section-active' : '')}
+        >
           <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
           <h1 className="mb-4" id="FullName">
             Gregorius <span id="Jovan">Jovan</span> Kresnadi
@@ -170,9 +213,9 @@ const App: React.FC = () => {
           </p>
         </section>
         <section
+          ref={expRef}
           id="Experience"
-          className={'pt-20 mb-16 relative flex flex-col' + (isVisible ? ' section-active' : '')}
-          ref={containerRef}
+          className={'pt-20 mb-16 relative flex flex-col' + (nav == 'Experience' ? ' section-active' : '')}
         >
           <div className="section-header-pop-up">
             <h2 className="section-header-text">Experience</h2>
@@ -195,9 +238,11 @@ const App: React.FC = () => {
           </div>
         </section>
         <section
+          ref={projectsRef}
           id="Projects"
           className={'pt-20 mb-12 relative flex flex-col w-full' + (nav == 'Projects' ? ' section-active' : '')}
         >
+          <div id="Projects-Target"> </div>
           <div className="section-header-pop-up">
             <h2 className="section-header-text">Projects</h2>
           </div>
@@ -207,7 +252,11 @@ const App: React.FC = () => {
             ))}
           </div>
         </section>
-        <section id="Contact" className="flex mt-8 mb-16">
+        <section
+          ref={contactRef}
+          id="Contact"
+          className={'flex mt-8 mb-16 ' + (nav == 'Contact' ? ' section-active' : '')}
+        >
           <a
             onMouseLeave={() => {
               setHovered('hovered');
