@@ -1,0 +1,33 @@
+:root {
+	/* Place variables here */
+  --val--black-1: 2, 0, 1;
+  --val--light-1: 194, 224, 249;
+  --val--light-2: 151, 205, 254;
+  --val--navy-bg: 22, 26, 36;
+  --val--navy-1: 13, 23, 46;
+  --val--navy-2: 16, 39, 98;
+  --val--navy-3: 7, 43, 134;
+  --val--neutral-1: 180, 180, 180;
+  --val--accent-1: 255, 155, 113;
+  --val--accent-2: 248, 89, 53;
+  --val--white-true: 255, 255, 255;
+  
+  --black-1: rgb(var(--val--black-1));
+  --light-1: rgb(var(--val--light-1));
+  --light-2: rgb(var(--val--light-2));
+  --navy-bg: rgb(var(--val--navy-bg));
+  --navy-1: rgb(var(--val--navy-1));
+  --navy-2: rgb(var(--val--navy-2));
+  --navy-3: rgb(var(--val--navy-3));
+  --neutral-1: rgb(var(--val--neutral-1));
+  --accent-1: rgb(var(--val--accent-1));
+  --accent-2: rgb(var(--val--accent-2));
+  --white-true: rgb(var(--val--white-true));
+
+  --glow-light-1: drop-shadow(0 0 4px rgba(var(--val--light-1), 0.5));
+  --glow-accent-1: drop-shadow(0 0 4px rgba(var(--val--accent-1), 0.7));
+
+  --cb-snap-on: cubic-bezier(.67,-0.02,0,1);
+  /* --cb-snap-on: cubic-bezier(.19,1.25,.94,.78); */
+  --cb-snap-off: cubic-bezier(.67,-0.02,0,1);
+}

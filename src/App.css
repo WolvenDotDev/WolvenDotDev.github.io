@@ -1,41 +1,176 @@
-#root {
-  max-width: 1280px;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  max-width: 100ch;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 1rem;
+  scroll-behavior: smooth;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 768px) {
+  main {
+    padding-right: 1.3rem; 
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+section { 
+  opacity: 1;
+}
+
+* {
+  transition: opacity 300ms ease-in;
+}
+
+.home-icon {
+  color: var(--neutral-1);
+  width: 2rem;
+  height: 2rem;
+  transition: color 200ms ease-in-out;
+}
+
+.home-icon:hover, .home-icon:active, .home-icon:focus {
+  color: var(--accent-1);
+}
+
+#Jovan {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent-1), var(--accent-1));
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+
+#About:hover #Jovan,
+#About:focus #Jovan,
+#About:active #Jovan,
+.section-active #Jovan {
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
+}
+
+#About a {
+  color: var(--light-1);
+}
+
+#About a:hover {
+  color: var(--accent-1);
+}
+
+.section-header-pop-up {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 4.5rem;
+  transition: top 500ms var(--cb-snap-off);
+  margin-left: 1rem;
+  padding-bottom: 2rem;
+  transition-delay: 500ms;
+}
+
+.section-header-text {
+  padding-bottom: 0.3rem;
+  border-bottom: solid 0.1em var(--accent-1);
+}
+
+.section-active .section-header-pop-up {
+  top: 0.5rem;
+  transition: top 400ms var(--cb-snap-on);
+  transition-delay: 0ms;
+}
+
+#Resume {
+  padding: 1rem 1.5rem;
+  border: solid 2px var(--accent-2);
+
+  background-image: linear-gradient(var(--accent-2), var(--accent-2));
+  background-size: 100% 0%;
+  background-position-x: 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease-out, scale 150ms linear;
+  scale: 1 1;
+}
+
+#Resume:hover, #Resume:focus {
+  color: var(--white-true);
+  background-size: 100% 100%;
+}
+
+#Resume:active, #Resume:focus {
+  scale: 0.98 0.98
+}
+
+#MailToButton {
+  box-sizing: border-box;
+  padding: 1.5rem 2.5rem;
+  color: white;
+  
+  background-image: linear-gradient(var(--accent-2), var(--accent-2));
+  background-size: 85% 70%;
+  background-position-y: 250%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out, mask-size 0.3s ease-in-out;
+  
+  mask-image: linear-gradient(white, white);
+  mask-repeat: no-repeat;
+  mask-size: 85% 60%;
+  mask-position: 50% 50%;
+  overflow: auto;
+}
+
+#MailToButton h4 {
+  padding: 0.5rem 1rem; 
+  overflow: auto;
+}
+
+@keyframes mail-cta {
+  0% {
+    mask-size: 85% 60%;
+    background-size: 85% 70%;
+    background-position-y: 250%;
+  }
+  10% {
+    mask-size: 85% 60%;
+    background-size: 85% 70%;
+    background-position-y: 250%;
+  }
+  40% {
+    background-position-y: 50%;
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+  }
+  70% {
+    background-size: 85% 70%;
+    mask-size: 85% 60%;
+    background-position-y: 50%;
+  }
+  100% {
+    mask-size: 90% 100%;
+    background-position-y: 50%;
+    background-size: 100% 100%;
   }
 }
 
-.card {
-  padding: 2em;
+#Contact.section-active #MailToButton {
+  color: white;
+  background-size: 100% 100%;
+  background-position-y: 50%;
+  mask-size: 90% 100%;
+  animation-name: mail-cta;
+  animation-duration: 700ms;
 }
 
-.read-the-docs {
-  color: #888;
+#MailToButton:hover {
+  mask-size: 100% 100% !important;
+  transition: mask-size 150ms ease-in-out;
+}
+
+footer a  {
+  font-weight: 500;
+  color: var(--light-1);
 }

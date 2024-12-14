@@ -10,10 +10,13 @@
         "lint": "eslint . --ext .ts,.tsx"
     },
     "dependencies": {
+        "gsap": "^3.12.5",
+        "jquery": "^3.7.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@types/jquery": "^3.5.32",
         "@types/react": "^18.0.26",
         "@types/react-dom": "^18.0.9",
         "@typescript-eslint/eslint-plugin": "^7.6.0",
