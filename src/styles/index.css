@@ -63,6 +63,7 @@ h5 {
 p,p li{
   color: var(--neutral-1);
   text-align: justify;
+  line-height: 1.5;
 }
 
 *::selection {
