@@ -1,4 +1,4 @@
-type DExperience = {
+export type DExperience = {
   id: string;
   title: string;
   company: string;

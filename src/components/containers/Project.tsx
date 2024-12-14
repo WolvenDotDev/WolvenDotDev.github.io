@@ -1,5 +1,5 @@
 import React from 'react';
-import type { DProject } from '@/types/project';
+import type { DProject } from '@/data/projects';
 import './container.css';
 
 type ProjectProps = {

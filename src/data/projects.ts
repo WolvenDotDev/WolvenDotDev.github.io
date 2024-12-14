@@ -1,4 +1,4 @@
-type DProject = {
+export type DProject = {
   id: string;
   title: string;
   iconFile: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { DExperience } from '@/types/experience';
+import type { DExperience } from '@/data/experience';
 import './container.css';
 
 type ExpProps = {
