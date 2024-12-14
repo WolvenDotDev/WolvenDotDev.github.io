@@ -88,7 +88,7 @@ section {
 
 #MailToButton {
   box-sizing: border-box;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2.5rem;
   color: white;
   
   background-image: linear-gradient(var(--accent-2), var(--accent-2));
@@ -102,12 +102,7 @@ section {
   mask-repeat: no-repeat;
   mask-size: 85% 60%;
   mask-position: 50% 50%;
-}
-#MailToButton.hovered {
-  animation-name: mail-cta;
-  animation-duration: 700ms;
-  animation-direction: reverse;
-  animation-delay: 100ms;
+  overflow: auto;
 }
 
 #MailToButton h4 {
@@ -119,62 +114,42 @@ section {
   0% {
     mask-size: 85% 60%;
     background-size: 85% 70%;
-    background-position-y: 220%;
+    background-position-y: 250%;
   }
-  35% {
+  10% {
+    mask-size: 85% 60%;
+    background-size: 85% 70%;
+    background-position-y: 250%;
+  }
+  40% {
     background-position-y: 50%;
     background-size: 85% 70%;
     mask-size: 85% 60%;
-    
   }
   70% {
     background-size: 85% 70%;
     mask-size: 85% 60%;
     background-position-y: 50%;
-    
   }
   100% {
-    mask-size: 100% 100%;
+    mask-size: 90% 100%;
     background-position-y: 50%;
     background-size: 100% 100%;
-    
   }
 }
 
-@keyframes mail-cta1 {
-  0% {
-    mask-size: 85% 60%;
-    background-size: 85% 70%;
-    background-position-y: 220%;
-  }
-  35% {
-    background-position-y: 50%;
-    background-size: 85% 70%;
-    mask-size: 85% 60%;
-    
-  }
-  70% {
-    background-size: 85% 70%;
-    mask-size: 85% 60%;
-    background-position-y: 50%;
-    
-  }
-  100% {
-    mask-size: 100% 100%;
-    background-position-y: 50%;
-    background-size: 100% 100%;
-    
-  }
-}
-
-#MailToButton.hover {
+#Contact.section-active #MailToButton {
   color: white;
   background-size: 100% 100%;
   background-position-y: 50%;
-  mask-size: 100% 100%;
-  animation-name: mail-cta1;
+  mask-size: 90% 100%;
+  animation-name: mail-cta;
   animation-duration: 700ms;
-  /* animation-direction: reverse; */
+}
+
+#MailToButton:hover {
+  mask-size: 100% 100% !important;
+  transition: mask-size 150ms ease-in-out;
 }
 
 footer a  {

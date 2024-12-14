@@ -1,167 +1,42 @@
-import type { DExperience } from '@/types/experience';
-import type { DProject } from '@/types/project';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './App.css';
 import { BlueSky, File, GitHub, LinkedIn, Mail } from './assets/Icons';
 import Experience from './components/containers/Experience';
 import Project from './components/containers/Project';
 import Nav from './components/Nav';
-
-// #region Data
-const expList: DExperience[] = [
-  {
-    id: 'solecode',
-    title: 'Software Engineer',
-    company: 'Solecode',
-    jobdesc: [
-      'Develop UI components and backend services for a resource management website of an Indonesian oil and gas company using C# ASP.NET MVC framework',
-      'Maintain code boilerplate for a Next.JS repository to be used in future company client projects',
-      'Develop back end services for a thesis management & student study plan website of a world-class private university in Jakarta, using C# .NET Core framework and Azure cloud service',
-    ],
-    date: 'Feb 2023 - Present',
-    skills: ['JavaScript', 'C#', '.NET', 'Azure'],
-  },
-  {
-    id: 'dana',
-    title: 'Front End SDET Intern',
-    company: 'DANA',
-    jobdesc: [
-      'Assure the quality of user experience on features of lifestyle services and mini programs by performing manual tests, increasing test coverage up to 95%',
-    ],
-    date: 'Aug 2021 – Feb 2022',
-    skills: ['Java', 'Cucumber'],
-  },
-  {
-    id: 'blibli',
-    title: 'SDET Intern',
-    company: 'Blibli.com',
-    jobdesc: [
-      'Increase test coverage to up to 95% on checkout and promotion features by creating automation for API testing and UI testing using Cucumber, Java, and Kafka',
-    ],
-    date: 'Jun - Aug 2022',
-    skills: ['Java', 'Cucumber', 'Kafka'],
-  },
-  {
-    id: 'lab-assistant',
-    title: 'Programming Lab Assistant',
-    company: 'Bandung Institute of Technology',
-    description:
-      'Course management in ITB is divided into several laboratories. Programming Lab manages Data Structure, Object Oriented Programming, and Web Based Development',
-    jobdesc: ['Assist and supervise students in coding practice', 'Arrange and grade students’ project assignments'],
-    date: '2020 - 2022',
-    skills: ['Java', 'C++', 'JavaScript', 'React.JS'],
-  },
-  {
-    id: 'itb',
-    title: 'Bachelor of Science in Informatics',
-    company: 'Bandung Institute of Technology',
-    jobdesc: ['GPA: 3.62/4.00', 'Vice Head of Publications Department at Informatics Student Union (HMIF ITB)'],
-    date: '2018-2022',
-  },
-];
-
-const projectList: DProject[] = [
-  {
-    id: 'porsee',
-    title: 'Porsee',
-    iconFile: 'PorseeIcon.svg',
-    file: '',
-    url: 'https://porsee-website-demo.vercel.app/',
-    description:
-      'Porsee is an Indonesian food catering service delivering fresh ready-to-cook ingredients to your doorstep. Porsee aims to bring restaurant quality food to your home kitchen, complete with the experience of cooking it yourself. I developed the website using NextJS and Firebase as the Backend, deployed to a Digital Ocean droplet with Docker to support containerization.',
-    date: '2023',
-    techs: ['NextJS', 'Typescript', 'Tailwind', 'Figma', 'Firebase', 'Digital Ocean', 'Docker'],
-  },
-  {
-    id: 'wolvendev',
-    title: 'wolven.dev',
-    iconFile: 'WolvenDev.png',
-    file: '',
-    url: 'https://wolven.dev/',
-    description:
-      "It's basically this website... \n I used Vite React with Typescript, and Tailwind to style and the occasional vanilla CSS to help out with complex animations.",
-    date: '2023',
-    techs: ['Vite', 'React', 'Figma', 'Typescript', 'Tailwind'],
-  },
-];
-// #endregion
+import expList from './data/experience';
+import projectList from './data/projects';
+import useNavigation from './hooks/useNavigation';
 
 const App: React.FC = () => {
-  const [hovered, setHovered] = useState('');
-  const [nav, setNav] = useState('About');
-
-  const aboutRef = useRef(null);
-  const expRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
-
   const sections = [
     {
       id: 'About',
       threshold: 1,
-      ref: aboutRef,
     },
     {
       id: 'Experience',
-      threshold: 0.2,
-      ref: expRef,
+      threshold: 0.3,
     },
     {
       id: 'Projects',
       threshold: 0.4,
-      ref: projectsRef,
     },
     {
       id: 'Contact',
       threshold: 1,
-      ref: contactRef,
     },
   ];
-
-  const sectionObservers = sections.map((sec) => {
-    const { threshold, ref } = sec;
-    const options = {
-      rootMargin: '0px',
-      threshold: threshold,
-    };
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      const entry = entries[0];
-      // console.log(entries);
-
-      if (entry.isIntersecting) {
-        console.log(entry.target.id);
-        setNav(entry.target.id);
-      }
-    };
-
-    const observer = new IntersectionObserver(observerCallback, options);
-    return { observer, ref };
-  });
-
-  const refs = [aboutRef, expRef, projectsRef, contactRef];
-
-  useEffect(() => {
-    sectionObservers.forEach((so) => {
-      const { observer, ref } = so;
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => {
-      sectionObservers.forEach((so) => {
-        const { observer, ref } = so;
-        if (ref.current) observer.unobserve(ref.current);
-      });
-    };
-  }, [...refs]);
+  const [navRefs, nav, setNav] = useNavigation(sections);
 
   return (
     <>
       <Nav nav={nav} setNav={setNav} />
       <main className="App">
         <section
-          ref={aboutRef}
+          ref={navRefs['About'].ref}
           id="About"
-          className={'py-4 my-12 lg:mt-32 px-5' + (nav == 'About' ? ' section-active' : '')}
+          className={'py-4 my-12 lg:mt-32 px-5' + (nav.includes('About') ? ' section-active' : '')}
         >
           <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
           <h1 className="mb-4" id="FullName">
@@ -213,14 +88,14 @@ const App: React.FC = () => {
           </p>
         </section>
         <section
-          ref={expRef}
+          ref={navRefs['Experience'].ref}
           id="Experience"
-          className={'pt-20 mb-16 relative flex flex-col' + (nav == 'Experience' ? ' section-active' : '')}
+          className={'pt-20 mb-16 relative flex flex-col' + (nav.includes('Experience') ? ' section-active' : '')}
         >
           <div className="section-header-pop-up">
             <h2 className="section-header-text">Experience</h2>
           </div>
-          <div className="flex flex-col lg:gap-4 gap-8 bg-navy-bg z-10">
+          <div className="exp-container flex flex-col lg:gap-4 gap-8 bg-navy-bg z-10">
             {expList.map((exp) => (
               <Experience experience={exp} key={`Exp-${exp.id}`} />
             ))}
@@ -238,9 +113,9 @@ const App: React.FC = () => {
           </div>
         </section>
         <section
-          ref={projectsRef}
+          ref={navRefs['Projects'].ref}
           id="Projects"
-          className={'pt-20 mb-12 relative flex flex-col w-full' + (nav == 'Projects' ? ' section-active' : '')}
+          className={'pt-20 mb-12 relative flex flex-col w-full' + (nav.includes('Projects') ? ' section-active' : '')}
         >
           <div id="Projects-Target"> </div>
           <div className="section-header-pop-up">
@@ -253,27 +128,11 @@ const App: React.FC = () => {
           </div>
         </section>
         <section
-          ref={contactRef}
+          ref={navRefs['Contact'].ref}
           id="Contact"
-          className={'flex mt-8 mb-16 ' + (nav == 'Contact' ? ' section-active' : '')}
+          className={'flex mt-8 mb-16 ' + (nav.includes('Contact') ? ' section-active' : '')}
         >
-          <a
-            onMouseLeave={() => {
-              setHovered('hovered');
-            }}
-            onBlur={() => {
-              setHovered('hovered');
-            }}
-            onMouseOver={() => {
-              setHovered('hover');
-            }}
-            onFocus={() => {
-              setHovered('hover');
-            }}
-            id="MailToButton"
-            className={'font-mono text-lg ' + hovered}
-            href="mailto:jovan.kresnadi@wolven.dev"
-          >
+          <a id="MailToButton" className="font-mono text-lg" href="mailto:jovan.kresnadi@wolven.dev">
             <h3>Get In Touch</h3>
           </a>
         </section>
