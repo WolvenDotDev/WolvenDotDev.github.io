@@ -82,14 +82,26 @@ section {
   transition-delay: 0ms;
 }
 
-#Resume .link-icon {
-  transform: translateY(0rem);
-  transition: transform 300ms var(--cb-snap-off);
+#Resume {
+  padding: 1rem 1.5rem;
+  border: solid 2px var(--accent-2);
+
+  background-image: linear-gradient(var(--accent-2), var(--accent-2));
+  background-size: 100% 0%;
+  background-position-x: 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease-out, scale 150ms linear;
+  scale: 1 1;
 }
 
-#Resume:hover .link-icon {
-  transform: translateY(-0.4rem);
-  transition: transform 300ms var(--cb-snap-on);
+#Resume:hover, #Resume:focus {
+  color: var(--white-true);
+  background-size: 100% 100%;
+}
+
+#Resume:active, #Resume:focus {
+  scale: 0.98 0.98
 }
 
 #MailToButton {

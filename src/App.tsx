@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <section
           ref={navRefs['About'].ref}
           id="About"
-          className={'py-4 my-12 lg:mt-32 px-5' + (nav.includes('About') ? ' section-active' : '')}
+          className={'py-4 my-12 lg:mt-32 px-4' + (nav.includes('About') ? ' section-active' : '')}
         >
           <h6 className="mb-1 text-accent-1 text-opacity-70">Hi, my name is</h6>
           <h1 className="mb-4" id="FullName">
@@ -105,12 +105,12 @@ const App: React.FC = () => {
           <div className="mt-8 flex justify-center items-center ">
             <a
               id="Resume"
-              className="hover:text-accent-2 flex pb-2 border-b-2 border-b-accent-1 gap-2 items-center"
+              className="flex flex-row gap-2 items-center"
               href="/Resume_Gregorius Jovan Kresnadi.pdf"
               target="_blank"
             >
-              <h4>Check Out Full Résumé</h4>
-              <File className="w-6 h-6 link-icon" />
+              <h5>Check Out Full Résumé</h5>
+              <File className="w-4 h-4 link-icon" />
             </a>
           </div>
         </section>
