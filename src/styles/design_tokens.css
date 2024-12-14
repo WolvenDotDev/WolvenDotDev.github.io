@@ -24,6 +24,9 @@
   --accent-2: rgb(var(--val--accent-2));
   --white-true: rgb(var(--val--white-true));
 
+  --glow-light-1: drop-shadow(0 0 4px rgba(var(--val--light-1), 0.5));
+  --glow-accent-1: drop-shadow(0 0 4px rgba(var(--val--accent-1), 0.7));
+
   --cb-snap-on: cubic-bezier(.67,-0.02,0,1);
   /* --cb-snap-on: cubic-bezier(.19,1.25,.94,.78); */
   --cb-snap-off: cubic-bezier(.67,-0.02,0,1);

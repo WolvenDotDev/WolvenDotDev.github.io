@@ -9,18 +9,20 @@ import projectList from './data/projects';
 import useNavigation from './hooks/useNavigation';
 
 const App: React.FC = () => {
+  const viewportWidth = window.innerWidth;
+  const isMobile = viewportWidth < 768;
   const sections = [
     {
       id: 'About',
-      threshold: 1,
+      threshold: isMobile ? 0.3 : 1,
     },
     {
       id: 'Experience',
-      threshold: 0.3,
+      threshold: isMobile ? 0.15 : 0.3,
     },
     {
       id: 'Projects',
-      threshold: 0.4,
+      threshold: isMobile ? 0.2 : 0.4,
     },
     {
       id: 'Contact',

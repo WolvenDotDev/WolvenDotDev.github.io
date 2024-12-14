@@ -9,6 +9,12 @@ main {
   scroll-behavior: smooth;
 }
 
+@media screen and (max-width: 768px) {
+  main {
+    padding-right: 1.3rem; 
+  }
+}
+
 section { 
   opacity: 1;
 }

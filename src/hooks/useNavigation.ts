@@ -33,7 +33,10 @@ const useNavigation = (
         const navigationList = prevState;
 
         if (entry.isIntersecting) return navigationList.concat([entry.target.id]);
-        else return navigationList.filter((n) => n != entry.target.id);
+        else {
+          if (navigationList.length == 1 && navigationList[0] == entry.target.id) return navigationList;
+          else return navigationList.filter((n) => n != entry.target.id);
+        }
       });
     };
 

@@ -41,13 +41,15 @@
 .nav-alt-item.selected .nav-alt-bar {
   scale: 1.2 1;
   background-color: var(--white-true);
+  filter: var(--glow-light-1);
 }
 
 #Nav {
   opacity: 0;
   z-index: 120;
   padding: 0.5rem;
-  background-color: rgba(var(--val--light-1), 0.05);
+  background-color: rgba(var(--val--light-2), 0.1);
+  backdrop-filter: blur(5px);
   transform-origin: 100% 0%;
 
   display: flex;
@@ -80,6 +82,7 @@
 
 .nav-item.selected {
   color: var(--light-1) !important;
+  font-weight: 500;
 }
 
 .nav-item:hover {
@@ -87,3 +90,33 @@
   background-color: rgba(var(--val--white-true), 0.1);
 }
 
+@media screen and (max-width: 768px) {
+  #Nav-Alt, #Nav{
+    right: 0.7rem;
+  }
+
+  #Nav-Alt {
+    width: 1rem;
+    gap: 0.2rem;
+    padding: 0;
+  }
+
+  .nav-alt-item {
+    border: none;
+    padding: 0.3rem 0;
+  }
+
+  .nav-alt-bar {
+    border: none;
+    height: 0.3em;
+    scale: 1 1;
+  }
+
+  .nav-alt-item.selected .nav-alt-bar {
+    scale: 1 1;
+  }
+
+  #Nav {
+    backdrop-filter: blur(10px);
+  }
+}
