@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './nav.css';
 
 interface NavProps {
@@ -14,21 +14,29 @@ const Navigations = [
 ];
 
 const Nav: React.FC<NavProps> = (props) => {
-  const { nav, setNav } = props;
+  const { nav } = props;
+  const navWrapper = useRef<HTMLElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const pushNavigation = (n: string) => {
-    setNav((prevState) => {
-      if (!prevState.includes(n)) return prevState.concat([n]);
-      else return prevState;
-    });
-  };
+  function handleTapOutside(event: TouchEvent) {
+    if (navWrapper.current && !navWrapper.current.contains(event.target as HTMLElement)) {
+      setIsOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('touchstart', handleTapOutside);
+    return () => {
+      document.removeEventListener('touchstart', handleTapOutside);
+    };
+  }, [navWrapper]);
 
   return (
     <div id="Nav-Container">
-      <nav id="Nav">
+      <nav id="Nav" ref={navWrapper} className={isOpen ? 'open' : ''}>
         {Navigations.map((n) => (
           <a
-            onClick={() => pushNavigation(n.id)}
+            onClick={() => setIsOpen(false)}
             href={'#' + n.id}
             key={'Nav-' + n.id}
             id={'Nav-' + n.id}
@@ -38,7 +46,7 @@ const Nav: React.FC<NavProps> = (props) => {
           </a>
         ))}
       </nav>
-      <div id="Nav-Alt">
+      <div id="Nav-Alt" role="button" tabIndex={0} onKeyDown={() => setIsOpen(true)} onClick={() => setIsOpen(true)}>
         {Navigations.map((n) => (
           <div
             key={'Nav-Alt-' + n.id}
