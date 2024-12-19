@@ -47,17 +47,21 @@ const Experiences: DExperience[] = [
   {
     id: 'lab-assistant',
     title: 'Programming Lab Assistant',
-    company: 'Bandung Institute of Technology',
+    company: 'Institut Teknologi Bandung',
     description:
-      'Course management in ITB is divided into several laboratories. Programming Lab manages Data Structure, Object Oriented Programming, and Web Based Development',
-    jobdesc: ['Assist and supervise students in coding practice', 'Arrange and grade students’ project assignments'],
+      'Course management in ITB is divided into several laboratories. Programming Lab manages Data Structure & Algorithm, Object Oriented Programming, and Web Development',
+    jobdesc: [
+      'Assist and supervise students in coding lessons and practice using Olympia learning platform',
+      'Manage development of students’ project assignment for Data Structures & Algorithm course',
+      'Arrange and grade students’ project assignment for Object Oriented Programming course',
+    ],
     date: '2020 - 2022',
     skills: ['Java', 'C++', 'C#'],
   },
   {
     id: 'itb',
     title: 'Bachelor of Science in Informatics',
-    company: 'Bandung Institute of Technology',
+    company: 'Institut Teknologi Bandung',
     jobdesc: ['GPA: 3.62/4.00', 'Vice Head of Publications Department at Informatics Student Union (HMIF ITB)'],
     date: '2018-2022',
   },
