@@ -14,12 +14,13 @@ const Experiences: DExperience[] = [
     title: 'Software Engineer',
     company: 'Solecode',
     jobdesc: [
+      'Develop a UI component library to be used in future company client projects using React Typescript with Vite, TailwindCSS, and Storybook as a front-end workshop for UI development, with the final deliverable as an npm package',
       'Develop UI components and backend services for a resource management website of an Indonesian oil and gas company using C# ASP.NET MVC framework',
-      'Maintain code boilerplate for a Next.JS repository to be used in future company client projects',
+      'Maintain code boilerplate for a NextJS repository to be used in future company client projects',
       'Develop back end services for a thesis management & student study plan website of a world-class private university in Jakarta, using C# .NET Core framework and Azure cloud service',
     ],
     date: 'Feb 2023 - Present',
-    skills: ['JavaScript', 'C#', '.NET', 'Azure'],
+    skills: ['React', 'NextJS', 'TailwindCSS', 'C#', '.NET', 'Azure', 'OracleDB', 'Storybook'],
   },
   {
     id: 'dana',
@@ -27,19 +28,21 @@ const Experiences: DExperience[] = [
     company: 'DANA',
     jobdesc: [
       'Assure the quality of user experience on features of lifestyle services and mini programs by performing manual tests, increasing test coverage up to 95%',
+      'Develop test suites and test cases for end-to-end tests, regression tests, and system integration tests',
     ],
     date: 'Aug 2021 – Feb 2022',
-    skills: ['Java', 'Cucumber'],
+    skills: ['Cucumber', 'Java', 'Selenium'],
   },
   {
     id: 'blibli',
     title: 'SDET Intern',
     company: 'Blibli.com',
     jobdesc: [
-      'Increase test coverage to up to 95% on checkout and promotion features by creating automation for API testing and UI testing using Cucumber, Java, and Kafka',
+      'Increase regression test coverage to up to 95% on checkout and promotion features by developing test cases using Behavior Driven Development and creating automation for API & UI testing using Cucumber & Selenium.',
+      'Maintain sanity test and integration test at 100% coverage',
     ],
     date: 'Jun - Aug 2022',
-    skills: ['Java', 'Cucumber', 'Kafka'],
+    skills: ['Cucumber', 'Selenium', 'Java', 'Kafka'],
   },
   {
     id: 'lab-assistant',
@@ -49,7 +52,7 @@ const Experiences: DExperience[] = [
       'Course management in ITB is divided into several laboratories. Programming Lab manages Data Structure, Object Oriented Programming, and Web Based Development',
     jobdesc: ['Assist and supervise students in coding practice', 'Arrange and grade students’ project assignments'],
     date: '2020 - 2022',
-    skills: ['Java', 'C++', 'JavaScript', 'React.JS'],
+    skills: ['Java', 'C++', 'C#'],
   },
   {
     id: 'itb',

@@ -77,7 +77,7 @@ const App: React.FC = () => {
             <a className="section-title" href="#Projects">
               side projects
             </a>{' '}
-            to keep my tech arsenal fresh. Mainly I choose Next.JS, Tailwind, and Go as my preferred tools of the trade,
+            to keep my tech arsenal fresh. Mainly I choose React, NextJS, Tailwind, and Go as my preferred tools of the trade,
             but I try to diversify to not look everything as a nail.
           </p>
           <br />
