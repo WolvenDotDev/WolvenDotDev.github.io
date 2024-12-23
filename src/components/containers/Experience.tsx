@@ -10,14 +10,14 @@ const Experience: React.FunctionComponent<ExpProps> = ({ experience }) => {
   const { id, title, company, description, jobdesc, date, skills } = experience;
   return (
     <div className="exp-card flex flex-col lg:gap-4 gap-6 transition-colors duration-200 hover:opacity-100 hover:bg-light-1 hover:bg-opacity-5 rounded-lg p-4">
-      <div className="flex lg:flex-row flex-col-reverse items-baseline">
+      <div className="flex lg:flex-row flex-col-reverse justify-between items-baseline gap-x-2">
         <h6 className="text-light-1 lg:w-1/5">{date}</h6>
-        <h4 className="lg:w-4/5">
+        <h4 className="lg:w-[78%]">
           {title} · {company}
         </h4>
       </div>
       <div className="flex justify-end">
-        <div className="lg:w-4/5 flex flex-col gap-4">
+        <div className="lg:w-[78%] flex flex-col gap-4">
           {description && <p>{description}</p>}
 
           <ul className="text-neutral-1 list-disc text-justify pl-2 flex flex-col gap-2 jobdesc-list">
