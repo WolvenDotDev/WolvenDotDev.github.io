@@ -30,7 +30,7 @@ const Experiences: DExperience[] = [
       'Assure the quality of user experience on features of lifestyle services and mini programs by performing manual tests, increasing test coverage up to 95%',
       'Develop test suites and test cases for end-to-end tests, regression tests, and system integration tests',
     ],
-    date: 'Aug 2021 – Feb 2022',
+    date: 'Aug 2021 - Feb 2022',
     skills: ['Cucumber', 'Java', 'Selenium'],
   },
   {
@@ -63,7 +63,7 @@ const Experiences: DExperience[] = [
     title: 'Bachelor of Science in Informatics',
     company: 'Institut Teknologi Bandung',
     jobdesc: ['GPA: 3.62/4.00', 'Vice Head of Publications Department at Informatics Student Union (HMIF ITB)'],
-    date: '2018-2022',
+    date: '2018 - 2022',
   },
 ];
 
