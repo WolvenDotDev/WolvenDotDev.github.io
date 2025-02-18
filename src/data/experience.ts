@@ -41,7 +41,7 @@ const Experiences: DExperience[] = [
       'Increase regression test coverage to up to 95% on checkout and promotion features by developing test cases using Behavior Driven Development and creating automation for API & UI testing using Cucumber & Selenium.',
       'Maintain sanity test and integration test at 100% coverage',
     ],
-    date: 'Jun - Aug 2022',
+    date: 'Jun - Aug 2021',
     skills: ['Cucumber', 'Selenium', 'Java', 'Kafka'],
   },
   {
