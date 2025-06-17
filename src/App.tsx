@@ -77,8 +77,8 @@ const App: React.FC = () => {
             <a className="section-title" href="#Projects">
               side projects
             </a>{' '}
-            to keep my tech arsenal fresh. Mainly I choose React, NextJS, Tailwind, and Go as my preferred tools of the trade,
-            but I try to diversify to not look everything as a nail.
+            to keep my tech arsenal fresh. Mainly I choose React, Next.js, Tailwind, and Go as my preferred tools of the
+            trade, but I try to diversify to not look everything as a nail.
           </p>
           <br />
           <p>
@@ -159,7 +159,7 @@ const App: React.FC = () => {
             </a>{' '}
             typeface.
           </div>
-          <div className="text-white-1">© 2024 wolven.dev</div>
+          <div className="text-white-1">© 2025 wolven.dev</div>
         </footer>
       </main>
     </>
