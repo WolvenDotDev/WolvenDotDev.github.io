@@ -18,8 +18,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({ project }) => {
     >
       <div className="flex gap-2">
         <img src={icon} alt="" className="w-8 aspect-square" />
-        <h3 className="title">{title}</h3>
-        <i className="link-icon fa fa-link"></i>
+        <h3 className="title">{title}<span><i className="link-icon fa fa-link"></i></span></h3>
+        
       </div>
       {description && <p className="lg:mx-3">{description}</p>}
 

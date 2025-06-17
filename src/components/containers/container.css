@@ -27,11 +27,13 @@
 }
 
 .project-card .link-icon {
-  transform: translateY(0.8rem);
+  padding-left: 0.5rem;
+  font-size: small;
+  transform: translateY(-0.2rem);
   transition: transform 300ms var(--cb-snap-off);
 }
 
 .project-card:hover .link-icon {
-  transform: translateY(0rem);
+  transform: translateY(-1rem);
   transition: transform 300ms var(--cb-snap-on);
 }
