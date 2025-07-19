@@ -27,7 +27,7 @@ const projects: DProject[] = [
     file: '',
     url: 'https://porsee-website-demo.vercel.app/',
     description:
-      'Porsee is an **Indonesian online food catering service** delivering fresh ready-to-cook ingredients to your doorstep. Porsee aims to bring restaurant quality food to your home kitchen, complete with the experience of cooking it yourself. I developed the website using **Next.js**, developed back-end services using **Firebase** with integrated **Google Analytics**. Deployed to a **Digital Ocean** droplet with **Docker.**',
+      'Porsee is an **Indonesian online food catering service** delivering fresh ready-to-cook ingredients to your doorstep. Porsee aims to bring restaurant quality food to your home kitchen, complete with the experience of cooking it yourself. I built the website using **Next.js**, developed back-end services using **Firebase** with integrated **Google Analytics**. Deployed to a **Digital Ocean** droplet with **Docker.**',
     date: '2023',
     techs: ['Next.js', 'Typescript', 'TailwindCSS', 'Figma', 'Firebase', 'Digital Ocean', 'Docker'],
   },
