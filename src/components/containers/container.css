@@ -9,7 +9,7 @@ strong {
 }
 
 .jobdesc-list li::marker {
-  /* content: "\f111"; FontAwesome Unicode */
+  /* content: "\f0da"; FontAwesome Unicode */
   font-family: FontAwesome;
   color: var(--accent-1)
 }
