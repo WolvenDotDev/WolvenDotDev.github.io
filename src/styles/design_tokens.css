@@ -11,6 +11,7 @@
   --val--accent-1: 255, 155, 113;
   --val--accent-2: 248, 89, 53;
   --val--white-true: 255, 255, 255;
+  --val--off-white: 200, 200, 200;
   
   --black-1: rgb(var(--val--black-1));
   --light-1: rgb(var(--val--light-1));
@@ -23,6 +24,7 @@
   --accent-1: rgb(var(--val--accent-1));
   --accent-2: rgb(var(--val--accent-2));
   --white-true: rgb(var(--val--white-true));
+  --off-white: rgb(var(--val--off-white));
 
   --glow-light-1: drop-shadow(0 0 4px rgba(var(--val--light-1), 0.5));
   --glow-accent-1: drop-shadow(0 0 4px rgba(var(--val--accent-1), 0.7));
