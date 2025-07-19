@@ -49,7 +49,7 @@ const App: React.FC = () => {
             Cyclist
           </h4>
           <div className="mb-8 flex items-center gap-6">
-            <a href="https://github.com/Wolven.Dev" target="_blank" rel="noreferrer">
+            <a href="https://github.com/WolvenDotDev" target="_blank" rel="noreferrer">
               <GitHub className="home-icon" />
             </a>
             <a href="https://www.linkedin.com/in/gregorius-jovan-kresnadi/" target="_blank" rel="noreferrer">
