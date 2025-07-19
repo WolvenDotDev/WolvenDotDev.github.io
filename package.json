@@ -12,6 +12,7 @@
     "dependencies": {
         "gsap": "^3.12.5",
         "jquery": "^3.7.1",
+        "micromark": "^4.0.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
