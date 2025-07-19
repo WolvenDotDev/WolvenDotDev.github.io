@@ -13,7 +13,7 @@ const Experience: React.FunctionComponent<ExpProps> = ({ experience }) => {
     <div className="exp-card flex flex-col lg:gap-4 gap-6 transition-colors duration-200 hover:opacity-100 hover:bg-light-1 hover:bg-opacity-5 rounded-lg p-4">
       <div className="flex lg:flex-row flex-col-reverse justify-between items-baseline gap-x-2 gap-y-1">
         <h6 className="text-light-1 lg:w-1/5">{date}</h6>
-        <div className="lg:w-[78%] flex flex-col items-start gap-x-2">
+        <div className="lg:w-[78%] flex flex-col items-start gap-x-2 lg:gap-y-2">
           <h4 className="">{title}</h4>
           <a href={companyUrl} target="_blank" rel="noreferrer" className="cursor-pointer flex company-link">
             <h5>{company}</h5>

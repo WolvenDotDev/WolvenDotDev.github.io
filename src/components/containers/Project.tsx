@@ -1,6 +1,7 @@
 import React from 'react';
 import type { DProject } from '@/data/projects';
 import './container.css';
+import { micromark } from 'micromark';
 
 type ProjectProps = {
   project: DProject;
@@ -18,10 +19,14 @@ const Project: React.FunctionComponent<ProjectProps> = ({ project }) => {
     >
       <div className="flex gap-2">
         <img src={icon} alt="" className="w-8 aspect-square" />
-        <h3 className="title">{title}<span><i className="link-icon fa fa-link"></i></span></h3>
-        
+        <h3 className="title">
+          {title}
+          <span>
+            <i className="link-icon fa fa-link"></i>
+          </span>
+        </h3>
       </div>
-      {description && <p className="lg:mx-3">{description}</p>}
+      {description && <p className="lg:mx-3" dangerouslySetInnerHTML={{ __html: micromark(description) }} />}
 
       <ul className="flex flex-wrap gap-3">
         {techs &&
