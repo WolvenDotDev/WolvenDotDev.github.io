@@ -1,7 +1,7 @@
 {
     "name": "wolven-web",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.2.0",
     "type": "commonjs",
     "scripts": {
         "dev": "vite",
