@@ -11,6 +11,31 @@ export type DExperience = {
 
 const Experiences: DExperience[] = [
   {
+    id: 'bloomly',
+    title: 'Co-Founder & Lead Software Engineer',
+    company: 'Bloomly',
+    companyUrl: 'https://bloomly.blessingapp.com',
+    description:
+      'Bloomly is a crowdfunding social media startup that facilitates holistic transformation for our users. We expose secluded communities in Indonesia\'s remote areas that need help and support from people who care to contribute',
+    jobdesc: [
+      'Developed company best practices for **mobile development** with **React Native** and **Expo Go**, **backend** with **Convex** and **NodeJS**, and complete **development pipeline** from **GitHub CI CD** to deployment on **Firebase App Distribution** and **Testflight**',
+      'Setup company-wide operational and technical **system infrastructure** with both **cloud-based** platforms using **Cloudflare** and **on-premise Ubuntu servers** using **Docker** and **Cloudflare Tunnels** with a **99.9% uptime** target',
+      'Developed and deployed backoffice application with internal access security layer using **Cloudflare One Zero Trust**'
+    ],
+    date: 'Jan 2026 - Present',
+    skills: [
+      'React Native',
+      'Expo Go',
+      'TailwindCSS',
+      'Convex',
+      'NodeJS',
+      'JavaScript',
+      'TypeScript',
+      'Cloudflare',
+      'Docker'
+    ],
+  },
+  {
     id: 'solecode',
     title: 'Software Engineer',
     company: 'Solecode',
@@ -25,7 +50,7 @@ const Experiences: DExperience[] = [
       'Maintained a **Next.js fullstack boilerplate** to **bootstrap** future company **projects**',
       'Developed **back-end services** for a thesis management and **student study plan platform** for a private university in Jakarta, using **C#** with **ASP.NET Core, Redis, Azure CosmosDB,** and **Azure cloud services**',
     ],
-    date: 'Feb 2023 - Present',
+    date: 'Feb 2023 - Nov 2025',
     skills: [
       'React',
       'Next.js',
