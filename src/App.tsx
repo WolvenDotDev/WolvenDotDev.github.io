@@ -63,30 +63,13 @@ const App: React.FC = () => {
             </a>
           </div>
           <p className="text-justify">
-            I currently work at{' '}
-            <a href="https://www.solecode.id/" target="_blank" rel="noreferrer">
-              Solecode
-            </a>{' '}
-            delivering high-quality, high-functioning code focusing on Full Stack Web Development using C# and
-            JavaScript. I love building things and scratching itches in the back of my head whenever something
-            interesting comes to mind.
+            I am the Co-Founder and Lead Software Engineer at{' '}
+            <a href="https://bloomly.blessingapp.com/" target="_blank" rel="noreferrer">
+              Bloomly
+            </a>.
           </p>
-          <br />
           <p>
-            I also do occasional{' '}
-            <a className="section-title" href="#Projects">
-              side projects
-            </a>{' '}
-            to keep my tech arsenal fresh. Mainly I choose React, Next.js, Tailwind, and Go as my preferred tools of the
-            trade, but I try to diversify to not look everything as a nail.
-          </p>
-          <br />
-          <p>
-            If you don&apos;t see me coding, you can find me either on{' '}
-            <a href="https://www.instagram.com/sang.pemuja.baja" target="_blank" rel="noreferrer">
-              two wheels
-            </a>
-            , on foot, in the gym, or on my gaming rig.
+            I build beautiful software with a purpose.
           </p>
         </section>
         <section
